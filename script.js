@@ -103,3 +103,15 @@ if ('IntersectionObserver' in window) {
   }, { threshold: 0.6 });
   counters.forEach((el) => co.observe(el));
 }
+
+// ---------- Mesure d'audience sans cookie (compteur MyDoc, aucune donnée personnelle) ----------
+(() => {
+  try {
+    const today = new Date().toISOString().slice(0, 10);
+    const first = localStorage.getItem('mydoc_visite') !== today; // seule la date est mémorisée
+    localStorage.setItem('mydoc_visite', today);
+    const body = JSON.stringify({ page: location.pathname, ref: document.referrer, first });
+    navigator.sendBeacon('https://europe-west9-my-doc-4cf84.cloudfunctions.net/track',
+      new Blob([body], { type: 'text/plain' }));
+  } catch (e) { /* mesure facultative */ }
+})();
