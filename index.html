@@ -1,631 +1,244 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MyDoc - Solutions de Télémédecine</title>
-
-    <!-- Favicon -->
-    <link rel="icon" href="https://imgs.search.brave.com/SSnTsMzvo11DnmFuuIeToRIx92Lzd80056KmKaz6HYI/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvMDA5ZDlmZDlm/ZmQxNmZjZWQ3YmFi/OWExMjQyMWY2ODU3/ZDAyMjM5MTlmZjhj/NjcxM2FhOTdlNDQ4/ZTMxNmRiMi93d3cu/ZmxhdGljb24uY29t/Lw" type="image/x-icon">
-
-    <!-- Meta SEO -->
-    <meta name="description" content="MyDoc offre des solutions de télémédecine pour les mutuelles, services d'urgence, assurances, et centres de téléconsultation 24/7">
-    <meta property="og:title" content="MyDoc - Solutions de Télémédecine">
-    <meta property="og:description" content="Solutions de télémédecine pour les mutuelles, services d'urgence, assurances, et centres de téléconsultation 24/7">
-
-    <!-- Préchargement des assets critiques -->
-    <link rel="preload" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" as="style">
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" as="style">
-
-    <!-- CDN -->
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link href="styles.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MyDoc France – Préparez votre consultation, votre médecin décide</title>
+  <meta name="description" content="MyDoc prépare votre consultation : un assistant vous pose les bonnes questions, votre médecin reçoit un dossier clair et vous répond. Rendez-vous, ordonnances signées et coffre-fort santé sécurisé.">
+  <meta property="og:title" content="MyDoc France">
+  <meta property="og:description" content="Préparez votre consultation. Votre médecin décide.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%232563eb'/%3E%3Cpath d='M16 8v16M8 16h16' stroke='white' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
 </head>
-<body class="antialiased text-gray-800 bg-gray-50">
-    <!-- Navigation avancée -->
-    <nav class="fixed w-full z-50 transition-all duration-300" id="navbar">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-20 items-center">
-                <div class="flex items-center">
-                    <div class="flex-shrink-0 flex items-center">
-                        <svg class="h-8 w-8 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M19 14C19 15.6569 17.6569 17 16 17H8C6.34315 17 5 15.6569 5 14V10C5 8.34315 6.34315 7 8 7H16C17.6569 7 19 8.34315 19 10V14Z" fill="currentColor"/>
-                            <path d="M12 14C13.1046 14 14 13.1046 14 12C14 10.8954 13.1046 10 12 10C10.8954 10 10 10.8954 10 12C10 13.1046 10.8954 14 12 14Z" fill="white"/>
-                            <path d="M16 7V5C16 3.34315 14.6569 2 13 2H11C9.34315 2 8 3.34315 8 5V7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                            <path d="M8 17V19C8 20.6569 9.34315 22 11 22H13C14.6569 22 16 20.6569 16 19V17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                        </svg>
-                        <span class="ml-2 text-2xl font-extrabold text-white">MyDoc</span>
-                    </div>
-                </div>
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="#solution" class="text-white hover:text-gray-200 font-medium transition">Solution</a>
-                    <a href="#technologie" class="text-white hover:text-gray-200 font-medium transition">Technologie</a>
-                    <a href="#marche" class="text-white hover:text-gray-200 font-medium transition">Marché</a>
-                    <a href="#equipe" class="text-white hover:text-gray-200 font-medium transition">Équipe</a>
-                    <a href="investissement.html" class="bg-white text-blue-600 px-5 py-2 rounded-full font-medium hover:bg-gray-100 transition shadow-lg">Investir</a>
-                </div>
-                <button class="md:hidden text-white focus:outline-none" id="mobile-menu-button">
-                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
-                </button>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Hero Section avec effet parallaxe -->
-    <section class="relative h-screen flex items-center justify-center overflow-hidden">
-        <div class="absolute inset-0 hero-gradient z-0"></div>
-
-        <div class="absolute inset-0 z-10 flex items-center justify-center">
-            <div class="absolute inset-0 bg-black opacity-30"></div>
-            <div class="relative z-20 text-center px-6 max-w-5xl">
-                <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white mb-6 leading-tight" data-aos="fade-up">
-                    Solutions de Télémédecine pour les <span class="text-blue-200">Mutuelles, Services d'Urgence et Assurances</span>
-                </h1>
-                <p class="text-xl text-blue-100 max-w-3xl mx-auto mb-10" data-aos="fade-up" data-aos-delay="200">
-                    MyDoc combine intelligence artificielle de pointe et expertise médicale pour des diagnostics rapides, précis et accessibles partout.
-                </p>
-                <div class="flex flex-col sm:flex-row justify-center gap-4" data-aos="fade-up" data-aos-delay="400">
-                    <a href="#solution" class="bg-white text-blue-600 px-8 py-4 rounded-full font-bold hover:bg-gray-100 transition transform hover:-translate-y-1 shadow-xl">
-                        Découvrir la plateforme
-                    </a>
-                    <a href="investissement.html" class="bg-transparent border-2 border-white text-white px-8 py-4 rounded-full font-bold hover:bg-white hover:text-blue-600 transition transform hover:-translate-y-1">
-                        Devenir investisseur
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <div class="absolute bottom-10 left-0 right-0 flex justify-center z-20" data-aos="fade-up" data-aos-delay="600">
-            <a href="#solution" class="text-white animate-bounce">
-                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-                </svg>
-            </a>
-        </div>
-    </section>
-
-    <!-- Solution - Section interactive -->
-    <section id="solution" class="py-24 bg-white relative overflow-hidden">
-        <div class="absolute -right-32 -top-32 w-64 h-64 bg-blue-100 rounded-full opacity-20"></div>
-        <div class="absolute -left-32 -bottom-32 w-64 h-64 bg-green-100 rounded-full opacity-20"></div>
-
-        <div class="max-w-7xl mx-auto px-6 relative z-10">
-            <div class="text-center mb-20">
-                <span class="inline-block px-4 py-1 bg-blue-100 text-blue-600 rounded-full font-medium mb-4" data-aos="fade-up">Innovation</span>
-                <h2 class="text-4xl font-extrabold mb-6" data-aos="fade-up">Notre solution <span class="text-blue-600">révolutionnaire</span></h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto" data-aos="fade-up">Une plateforme complète qui transforme l'expérience médicale grâce à l'intelligence artificielle</p>
-            </div>
-
-            <div class="grid lg:grid-cols-2 gap-16 items-center">
-                <div class="relative" data-aos="fade-right">
-                    <div class="absolute -left-8 -top-8 w-32 h-32 bg-blue-600 rounded-full opacity-10 z-0"></div>
-                    <div class="relative z-10">
-                        <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
-                             alt="Interface MyDoc"
-                             class="rounded-xl shadow-2xl transform hover:rotate-1 transition duration-500">
-                    </div>
-                    <div class="absolute -right-8 -bottom-8 w-20 h-20 bg-green-600 rounded-full opacity-10 z-0"></div>
-                </div>
-
-                <div data-aos="fade-left">
-                    <div class="space-y-8">
-                        <div class="flex items-start">
-                            <div class="flex-shrink-0 bg-blue-100 p-3 rounded-lg text-blue-600 mr-6">
-                                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
-                                </svg>
-                            </div>
-                            <div>
-                                <h3 class="text-2xl font-bold mb-3">Diagnostic IA instantané</h3>
-                                <p class="text-gray-600">Notre algorithme analyse les symptômes, les antécédents et les données biométriques pour proposer un diagnostic préliminaire en quelques secondes, idéal pour les services d'urgence et les centres de téléconsultation 24/7.</p>
-                            </div>
-                        </div>
-
-                        <div class="flex items-start">
-                            <div class="flex-shrink-0 bg-blue-100 p-3 rounded-lg text-blue-600 mr-6">
-                                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
-                                </svg>
-                            </div>
-                            <div>
-                                <h3 class="text-2xl font-bold mb-3">Validation médicale humaine</h3>
-                                <p class="text-gray-600">Chaque diagnostic est validé par un médecin agréé, garantissant la fiabilité et la sécurité des patients.</p>
-                            </div>
-                        </div>
-
-                        <div class="flex items-start">
-                            <div class="flex-shrink-0 bg-blue-100 p-3 rounded-lg text-blue-600 mr-6">
-                                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
-                                </svg>
-                            </div>
-                            <div>
-                                <h3 class="text-2xl font-bold mb-3">Sécurité et conformité</h3>
-                                <p class="text-gray-600">Données stockées sur serveurs HDS certifiés, conformité RGPD et hébergement souverain en France.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Technologie - Section avec effet visuel -->
-    <section id="technologie" class="py-24 bg-gray-900 text-white relative overflow-hidden">
-        <div class="absolute inset-0 opacity-5">
-            <div class="absolute inset-0 bg-gradient-to-r from-blue-500 to-green-500"></div>
-        </div>
-
-        <div class="max-w-7xl mx-auto px-6 relative z-10">
-            <div class="text-center mb-20">
-                <span class="inline-block px-4 py-1 bg-blue-600 text-white rounded-full font-medium mb-4" data-aos="fade-up">Technologie</span>
-                <h2 class="text-4xl font-extrabold mb-6" data-aos="fade-up">Une <span class="text-blue-400">IA médicale</span> de pointe</h2>
-                <p class="text-xl text-gray-300 max-w-3xl mx-auto" data-aos="fade-up">Notre technologie s'appuie sur les dernières avancées en intelligence artificielle et traitement du langage naturel</p>
-            </div>
-
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
-                <div class="glass-card p-8 rounded-2xl feature-card" data-aos="zoom-in">
-                    <div class="text-blue-400 mb-5">
-                        <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path>
-                        </svg>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4">Apprentissage profond</h3>
-                    <p class="text-gray-300">Réseaux de neurones convolutifs et transformers spécialement entraînés sur des milliers de cas médicaux.</p>
-                </div>
-
-                <div class="glass-card p-8 rounded-2xl feature-card" data-aos="zoom-in" data-aos-delay="200">
-                    <div class="text-blue-400 mb-5">
-                        <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"></path>
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.071a11.952 11.952 0 00-6.824-2.998 12.083 12.083 0 01.665-6.479L12 14z"></path>
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l-6.16-3.422a12.083 12.083 0 01-.665 6.479A11.952 11.952 0 0012 20.071a11.952 11.952 0 006.824-2.998 12.083 12.083 0 01-.665-6.479L12 14z"></path>
-                        </svg>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4">Traitement multimodal</h3>
-                    <p class="text-gray-300">Analyse combinée des symptômes décrits, images médicales et données des capteurs connectés.</p>
-                </div>
-
-                <div class="glass-card p-8 rounded-2xl feature-card" data-aos="zoom-in" data-aos-delay="400">
-                    <div class="text-blue-400 mb-5">
-                        <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M6 14h12"></path>
-                        </svg>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4">Mobile first</h3>
-                    <p class="text-gray-300">Optimisé pour smartphone avec exploitation des capteurs (caméra, micro, accéléromètre).</p>
-                </div>
-            </div>
-
-            <div class="mt-20" data-aos="fade-up">
-                <div class="bg-gray-800 rounded-2xl p-8 md:p-12 relative overflow-hidden">
-                    <div class="absolute -right-20 -top-20 w-64 h-64 bg-blue-600 rounded-full opacity-10"></div>
-                    <div class="absolute -left-20 -bottom-20 w-64 h-64 bg-green-600 rounded-full opacity-10"></div>
-
-                    <div class="relative z-10">
-                        <div class="grid lg:grid-cols-2 gap-12 items-center">
-                            <div>
-                                <h3 class="text-3xl font-bold mb-6">Notre architecture technique</h3>
-                                <p class="text-gray-300 mb-8">Une infrastructure robuste et scalable conçue pour garantir performance et sécurité.</p>
-
-                                <div class="space-y-6">
-                                    <div class="flex items-start">
-                                        <div class="flex-shrink-0 mt-1">
-                                            <div class="w-3 h-3 bg-blue-400 rounded-full"></div>
-                                        </div>
-                                        <div class="ml-4">
-                                            <h4 class="text-lg font-semibold">Backend en Go et Python</h4>
-                                            <p class="text-gray-400">Performance et fiabilité pour le traitement des requêtes médicales</p>
-                                        </div>
-                                    </div>
-
-                                    <div class="flex items-start">
-                                        <div class="flex-shrink-0 mt-1">
-                                            <div class="w-3 h-3 bg-green-400 rounded-full"></div>
-                                        </div>
-                                        <div class="ml-4">
-                                            <h4 class="text-lg font-semibold">Base de données PostgreSQL</h4>
-                                            <p class="text-gray-400">Stockage sécurisé des données patients avec chiffrement de bout en bout</p>
-                                        </div>
-                                    </div>
-
-                                    <div class="flex items-start">
-                                        <div class="flex-shrink-0 mt-1">
-                                            <div class="w-3 h-3 bg-purple-400 rounded-full"></div>
-                                        </div>
-                                        <div class="ml-4">
-                                            <h4 class="text-lg font-semibold">Infrastructure cloud AWS</h4>
-                                            <p class="text-gray-400">Hébergement HDS certifié avec haute disponibilité</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="relative">
-                                <div class="bg-gray-700 p-6 rounded-xl">
-                                    <div class="flex items-center mb-4">
-                                        <div class="w-3 h-3 bg-red-500 rounded-full mr-2"></div>
-                                        <div class="w-3 h-3 bg-yellow-500 rounded-full mr-2"></div>
-                                        <div class="w-3 h-3 bg-green-500 rounded-full"></div>
-                                    </div>
-                                    <div class="bg-gray-900 p-4 rounded-md overflow-x-auto code-container">
-                                        <pre class="text-green-400 text-sm">
-<span class="text-blue-400">class</span> <span class="text-yellow-300">MedicalAI</span>:
-    <span class="text-blue-400">def</span> <span class="text-yellow-300">__init__</span>(<span class="text-blue-200">self</span>):
-        <span class="text-blue-200">self</span>.model = load_pretrained_model()
-        <span class="text-blue-200">self</span>.symptoms_db = MedicalDatabase()
-
-    <span class="text-blue-400">def</span> <span class="text-yellow-300">analyze</span>(<span class="text-blue-200">self</span>, symptoms):
-        <span class="text-gray-600"># Prétraitement des symptômes</span>
-        processed = preprocess(symptoms)
-
-        <span class="text-gray-600"># Prédiction avec le modèle IA</span>
-        prediction = <span class="text-blue-200">self</span>.model.predict(processed)
-
-        <span class="text-blue-400">return</span> {
-            <span class="text-yellow-300">'diagnosis'</span>: prediction,
-            <span class="text-yellow-300">'confidence'</span>: calculate_confidence(prediction)
-        }</pre>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+<body>
+  <header class="top">
+    <div class="wrap nav">
+      <a class="brand" href="/"><span class="logo">+</span> MyDoc France</a>
+      <button class="burger" aria-label="Ouvrir le menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      <nav class="menu">
+        <a href="#patients">Patients</a>
+        <a href="#medecins">Médecins</a>
+        <a href="#entreprises">Entreprises</a>
+        <a href="#equipe">Équipe</a>
+        <a href="investissement.html">Investir</a>
+        <a class="btn btn-primary btn-small" href="https://app.mydocfrance.com/app/">Se connecter</a>
+      </nav>
     </div>
-</section>
+  </header>
 
-    <!-- Offre B2B - Nouvelle Section -->
-    <section id="offre-b2b" class="py-24 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-20">
-                <span class="inline-block px-4 py-1 bg-blue-100 text-blue-600 rounded-full font-medium mb-4" data-aos="fade-up">Offre B2B</span>
-                <h2 class="text-4xl font-extrabold mb-6" data-aos="fade-up">Nos solutions <span class="text-blue-600">ciblées</span></h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto" data-aos="fade-up">Nous offrons des solutions spécifiques pour les mutuelles, services d'urgence, assurances, et centres de téléconsultation 24/7.</p>
-            </div>
-
-            <div class="grid lg:grid-cols-4 gap-12 mb-20">
-                <div class="bg-white p-8 rounded-2xl shadow-lg" data-aos="fade-right">
-                    <div class="text-blue-600 mb-5">
-                        <i class="fas fa-file-medical fa-3x"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4">Pour les Mutuelles</h3>
-                    <p class="text-gray-600 mb-6">Automatisez l'analyse des demandes avec notre IA, réduisant ainsi la charge de travail des médecins et minimisant les erreurs. Bénéficiez d'une redistribution efficace des tâches.</p>
-                    <ul class="list-disc pl-5 space-y-2 text-gray-600">
-                        <li>Réduction des coûts opérationnels</li>
-                        <li>Amélioration de la satisfaction des membres</li>
-                        <li>Optimisation des processus de réclamation</li>
-                    </ul>
-                </div>
-
-                <div class="bg-white p-8 rounded-2xl shadow-lg" data-aos="fade-up">
-                    <div class="text-blue-600 mb-5">
-                        <i class="fas fa-ambulance fa-3x"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4">Pour les Services d'Urgence</h3>
-                    <p class="text-gray-600 mb-6">Traitez les appels plus efficacement avec notre solution de transcription et d'analyse en temps réel. Fournissez aux médecins les informations nécessaires pour une prise de décision rapide.</p>
-                    <ul class="list-disc pl-5 space-y-2 text-gray-600">
-                        <li>Réduction des temps de réponse</li>
-                        <li>Amélioration de la qualité des informations transmises</li>
-                        <li>Optimisation des ressources humaines</li>
-                    </ul>
-                </div>
-
-                <div class="bg-white p-8 rounded-2xl shadow-lg" data-aos="fade-up">
-                    <div class="text-blue-600 mb-5">
-                        <i class="fas fa-shield-alt fa-3x"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4">Pour les Assurances</h3>
-                    <p class="text-gray-600 mb-6">Réduisez les coûts et améliorez l'efficacité des processus de réclamation avec notre solution de télémédecine.</p>
-                    <ul class="list-disc pl-5 space-y-2 text-gray-600">
-                        <li>Réduction des coûts</li>
-                        <li>Amélioration de la satisfaction des clients</li>
-                        <li>Optimisation des processus</li>
-                    </ul>
-                </div>
-
-                <div class="bg-white p-8 rounded-2xl shadow-lg" data-aos="fade-left">
-                    <div class="text-blue-600 mb-5">
-                        <i class="fas fa-clock fa-3x"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4">Centres de Téléconsultation 24/7</h3>
-                    <p class="text-gray-600 mb-6">Offrez des consultations médicales 24/7 avec des diagnostics rapides et précis.</p>
-                    <ul class="list-disc pl-5 space-y-2 text-gray-600">
-                        <li>Accessibilité 24/7</li>
-                        <li>Réduction des temps d'attente</li>
-                        <li>Amélioration de la précision des diagnostics</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="bg-white border border-gray-200 rounded-2xl shadow-xl overflow-hidden" data-aos="fade-up">
-                <div class="grid lg:grid-cols-2 gap-12 items-center">
-                    <div class="p-8">
-                        <h3 class="text-3xl font-bold mb-6">Notre stratégie en deux phases</h3>
-                        <p class="text-xl text-gray-600 mb-8">Nous nous concentrons d'abord sur le marché B2B pour établir une base financière solide. Une fois cette étape accomplie, nous prévoyons d'étendre notre offre aux patients et médecins individuels.</p>
-                        <a href="investissement.html" class="bg-blue-600 text-white px-8 py-4 rounded-full font-bold hover:bg-blue-700 transition transform hover:-translate-y-1 shadow-xl">
-                            Contactez-nous pour en savoir plus
-                        </a>
-                    </div>
-                    <div class="hidden lg:block h-full">
-                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
-                             alt="Stratégie B2B MyDoc"
-                             class="w-full h-full object-cover">
-                    </div>
-                </div>
-            </div>
+  <main>
+    <!-- Accueil -->
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <h1>Préparez votre consultation.<br>Votre médecin décide.</h1>
+          <p class="lead">Un assistant vous pose les bonnes questions, comme le ferait votre médecin. Il reçoit un dossier clair, donne son avis et vous répond, avec une ordonnance signée si besoin.</p>
+          <div class="hero-actions">
+            <a class="btn btn-light" href="https://app.mydocfrance.com/app/?espace=patient">Je suis patient</a>
+            <a class="btn btn-ghost" href="https://app.mydocfrance.com/app/?espace=medecin">Je suis médecin</a>
+          </div>
+          <p class="hero-note"><span class="urgent">En cas d'urgence, appelez le <strong>15</strong> ou le <strong>112</strong>. MyDoc ne remplace pas les services d'urgence.</span></p>
         </div>
+        <div class="phone" aria-hidden="true">
+          <div class="screen">
+            <div class="screen-head"><small>Consultation</small><strong>Assistant MyDoc</strong></div>
+            <div class="chat">
+              <div class="bubble ai">Bonjour, qu'est-ce qui vous amène aujourd'hui ?</div>
+              <div class="bubble me">J'ai mal à la gorge depuis 3 jours.</div>
+              <div class="bubble ai">Avez-vous de la fièvre ? Si oui, combien ?</div>
+              <div class="bubble me">38,5 hier soir.</div>
+              <div class="bubble ai">Avez-vous du mal à avaler votre salive ?</div>
+            </div>
+            <div class="screen-foot">✓ Dossier envoyé au Dr Martin</div>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <!-- Marché - Section avec visualisation data -->
-    <section id="marche" class="py-24 bg-white">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-20">
-                <span class="inline-block px-4 py-1 bg-blue-100 text-blue-600 rounded-full font-medium mb-4" data-aos="fade-up">Marché</span>
-                <h2 class="text-4xl font-extrabold mb-6" data-aos="fade-up">Un secteur en <span class="text-blue-600">forte croissance</span></h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto" data-aos="fade-up">La télémédecine connaît une adoption massive et répond à des besoins critiques</p>
-            </div>
-
-            <div class="grid lg:grid-cols-2 gap-12 items-center mb-20">
-                <div data-aos="fade-right">
-                    <div class="bg-gray-50 p-8 rounded-2xl shadow-lg">
-                        <h3 class="text-2xl font-bold mb-6">Problématique actuelle</h3>
-
-                        <div class="space-y-6">
-                            <div class="flex items-start">
-                                <div class="flex-shrink-0 mt-1 text-red-500">
-                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
-                                    </svg>
-                                </div>
-                                <div class="ml-4">
-                                    <h4 class="text-lg font-semibold">Déserts médicaux</h4>
-                                    <p class="text-gray-600">6 millions de Français n'ont pas de médecin traitant, avec des délais d'attente moyens de 6 jours.</p>
-                                </div>
-                            </div>
-
-                            <div class="flex items-start">
-                                <div class="flex-shrink-0 mt-1 text-red-500">
-                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
-                                    </svg>
-                                </div>
-                                <div class="ml-4">
-                                    <h4 class="text-lg font-semibold">Coûts croissants</h4>
-                                    <p class="text-gray-600">Les dépenses de santé représentent 11% du PIB français avec une croissance annuelle de 4%.</p>
-                                </div>
-                            </div>
-
-                            <div class="flex items-start">
-                                <div class="flex-shrink-0 mt-1 text-red-500">
-                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
-                                    </svg>
-                                </div>
-                                <div class="ml-4">
-                                    <h4 class="text-lg font-semibold">Inégalités territoriales</h4>
-                                    <p class="text-gray-600">8% du territoire est classé en désert médical, avec des disparités importantes entre zones urbaines et rurales.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div data-aos="fade-left">
-                    <div class="bg-gray-900 text-white p-8 rounded-2xl shadow-lg">
-                        <h3 class="text-2xl font-bold mb-6">Opportunités du marché</h3>
-
-                        <div class="space-y-6">
-                            <div class="flex items-start">
-                                <div class="flex-shrink-0 mt-1 text-green-400">
-                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
-                                    </svg>
-                                </div>
-                                <div class="ml-4">
-                                    <h4 class="text-lg font-semibold">Croissance exponentielle</h4>
-                                    <p class="text-gray-300">Le marché européen de la e-santé devrait atteindre 80 milliards € d'ici 2025 (+18% par an).</p>
-                                </div>
-                            </div>
-
-                            <div class="flex items-start">
-                                <div class="flex-shrink-0 mt-1 text-green-400">
-                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
-                                    </svg>
-                                </div>
-                                <div class="ml-4">
-                                    <h4 class="text-lg font-semibold">Adoption massive</h4>
-                                    <p class="text-gray-300">60% des Français sont prêts à utiliser l'IA pour un premier diagnostic médical.</p>
-                                </div>
-                            </div>
-
-                            <div class="flex items-start">
-                                <div class="flex-shrink-0 mt-1 text-green-400">
-                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
-                                    </svg>
-                                </div>
-                                <div class="ml-4">
-                                    <h4 class="text-lg font-semibold">Remboursement assuré</h4>
-                                    <p class="text-gray-300">Les téléconsultations sont remboursées par l'assurance maladie depuis 2018.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="bg-white border border-gray-200 rounded-2xl shadow-xl overflow-hidden" data-aos="fade-up">
-                <div class="grid lg:grid-cols-3 divide-x divide-gray-200">
-                    <div class="p-8 text-center">
-                        <div class="text-5xl font-extrabold text-blue-600 mb-2">30€</div>
-                        <div class="text-gray-600 font-medium">Par médecin/mois</div>
-                        <div class="mt-4 text-sm text-gray-500">Abonnement B2B pour les professionnels de santé</div>
-                    </div>
-
-                    <div class="p-8 text-center">
-                        <div class="text-5xl font-extrabold text-blue-600 mb-2">5€</div>
-                        <div class="text-gray-600 font-medium">Par consultation</div>
-                        <div class="mt-4 text-sm text-gray-500">Tarif B2C pour les patients</div>
-                    </div>
-
-                    <div class="p-8 text-center">
-                        <div class="text-5xl font-extrabold text-blue-600 mb-2">300K</div>
-                        <div class="text-gray-600 font-medium">Consultations/mois</div>
-                        <div class="mt-4 text-sm text-gray-500">Objectif en année 3</div>
-                    </div>
-                </div>
-            </div>
+    <!-- Comment ça marche -->
+    <section class="section" id="comment">
+      <div class="wrap">
+        <div class="center">
+          <span class="eyebrow">Comment ça marche</span>
+          <h2>Trois étapes, un seul décideur : votre médecin</h2>
+          <p class="intro">L'assistant recueille les informations, l'IA propose des hypothèses au médecin, et c'est le médecin qui pose le diagnostic.</p>
         </div>
+        <div class="grid grid-3 steps">
+          <div class="card step"><h3>Vous décrivez vos symptômes</h3><p class="muted">L'assistant vous interroge pas à pas : symptômes, durée, antécédents, traitements, allergies. Il repère les signes d'alerte et vous oriente vers le 15 si nécessaire.</p></div>
+          <div class="card step"><h3>Votre médecin reçoit un dossier clair</h3><p class="muted">Un compte-rendu structuré, avec des hypothèses diagnostiques par IA et des traitements vérifiés dans la base officielle des médicaments. Le médecin corrige, complète et décide.</p></div>
+          <div class="card step"><h3>Vous recevez sa réponse</h3><p class="muted">Conseils, ordonnance ou examens signés par le médecin, rendez-vous si besoin, et suivi dans le temps. Tout est rangé dans votre espace.</p></div>
+        </div>
+      </div>
     </section>
 
-    <!-- Équipe - Section avec effet 3D -->
-    <section id="equipe" class="py-24 bg-gray-50 relative overflow-hidden">
-        <div class="absolute inset-0 opacity-5">
-            <div class="absolute inset-0 bg-gradient-to-r from-blue-500 to-green-500"></div>
+    <!-- Patients et médecins -->
+    <section class="section alt" id="patients">
+      <div class="wrap">
+        <div class="grid grid-2">
+          <div class="audience patient">
+            <span class="eyebrow">Pour les patients</span>
+            <h2>Votre santé, plus simple</h2>
+            <ul>
+              <li>Décrivez vos symptômes à tout moment, depuis votre téléphone</li>
+              <li>Recevez la réponse de votre médecin et vos ordonnances signées</li>
+              <li>Prenez rendez-vous en quelques secondes</li>
+              <li>Gardez analyses, ordonnances et photos dans un coffre-fort santé</li>
+              <li>Vous choisissez ce que votre médecin peut voir</li>
+            </ul>
+            <a class="btn btn-primary" href="https://app.mydocfrance.com/app/?espace=patient">Créer mon espace patient</a>
+          </div>
+          <div class="audience doctor" id="medecins">
+            <span class="eyebrow">Pour les médecins · MyDoc Pro</span>
+            <h2>Moins de temps à questionner, plus à soigner</h2>
+            <ul>
+              <li>Des patients qui arrivent avec une anamnèse complète et structurée</li>
+              <li>Des hypothèses diagnostiques par IA, classées par probabilité, avec les arguments cliniques</li>
+              <li>Des propositions de traitement vérifiées dans la base officielle des médicaments (ANSM)</li>
+              <li>Ordonnances et examens signés par code SMS</li>
+              <li>Agenda et prise de rendez-vous intégrés</li>
+              <li>Documents partagés par le patient, au même endroit</li>
+            </ul>
+            <a class="btn btn-primary" href="https://app.mydocfrance.com/app/?espace=medecin">Ouvrir MyDoc Pro</a>
+          </div>
         </div>
-
-        <div class="max-w-7xl mx-auto px-6 relative z-10">
-            <div class="text-center mb-20">
-                <span class="inline-block px-4 py-1 bg-blue-100 text-blue-600 rounded-full font-medium mb-4" data-aos="fade-up">Équipe</span>
-                <h2 class="text-4xl font-extrabold mb-6" data-aos="fade-up">Rencontrez <span class="text-blue-600">notre équipe</span></h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto" data-aos="fade-up">Une équipe expérimentée alliant expertise médicale, technologique et entrepreneuriale</p>
-            </div>
-
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-white p-8 rounded-2xl shadow-lg transform transition-all duration-500 hover:scale-105" data-aos="flip-left">
-                    <div class="relative group">
-                        <img src="images/victor_veduta.jpg"
-                             alt="Victor Veduta"
-                             class="w-full h-64 object-cover rounded-xl mb-6">
-                        <div class="absolute inset-0 bg-blue-600 opacity-0 group-hover:opacity-20 rounded-xl transition duration-300"></div>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-2">Victor Veduta</h3>
-                    <p class="text-blue-600 font-medium mb-4">CEO & Co-fondateur</p>
-                    <p class="text-gray-600 mb-6">Entrepreneur avec plus de 10 ans d’expérience dans le développement commercial, la stratégie et la création de réseaux. Spécialisé dans la mobilité, la tech et les modèles innovants.</p>
-                    <div class="flex space-x-4">
-                        <a href="https://www.linkedin.com/in/victor-veduta-a29597180/" class="text-gray-400 hover:text-blue-600 transition" target="_blank">
-                            <i class="fab fa-linkedin-in text-lg"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="bg-white p-8 rounded-2xl shadow-lg transform transition-all duration-500 hover:scale-105" data-aos="flip-left" data-aos-delay="200">
-                    <div class="relative group">
-                        <img src="images/sebastien_rastegar.jpg"
-                             alt="Sébastien Rastegar"
-                             class="w-full h-64 object-cover rounded-xl mb-6">
-                        <div class="absolute inset-0 bg-blue-600 opacity-0 group-hover:opacity-20 rounded-xl transition duration-300"></div>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-2">Sébastien Rastegar</h3>
-                    <p class="text-blue-600 font-medium mb-4">CTO & Co-fondateur</p>
-                    <p class="text-gray-600 mb-6">Architecte technique avec 15 ans d'expérience dans les systèmes distribués, le cloud et l'optimisation algorithmique, dont plus de 5 ans dans des projets liés à l'IA et à la data science. Ancien de BNP Paribas, Alstom et Bouygues Telecom.</p>
-                </div>
-
-                <div class="bg-white p-8 rounded-2xl shadow-lg transform transition-all duration-500 hover:scale-105" data-aos="flip-left" data-aos-delay="400">
-                    <div class="relative group">
-                        <img src="images/ludovic_rocher.jpg"
-                             alt="Ludovic Rocher"
-                             class="w-full h-64 object-cover rounded-xl mb-6">
-                        <div class="absolute inset-0 bg-blue-600 opacity-0 group-hover:opacity-20 rounded-xl transition duration-300"></div>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-2">Ludovic Rocher</h3>
-                    <p class="text-blue-600 font-medium mb-4">CFO & Co-fondateur</p>
-                    <p class="text-gray-600 mb-6">Ingénierie informatique et finance, avec une expertise en gestion de projet, modélisation économique et stratégie de croissance. Expérience croisée entre tech, business et pilotage financier.</p>
-                    <div class="flex space-x-4">
-                        <a href="https://www.linkedin.com/in/ludovic-rocher-33a562248/" class="text-gray-400 hover:text-blue-600 transition" target="_blank">
-                            <i class="fab fa-linkedin-in text-lg"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
+      </div>
     </section>
 
-    <!-- Investir - Section avec timeline interactive -->
-    
-
-    <!-- Footer avancé -->
-    <footer class="bg-gray-900 text-white pt-20 pb-12">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="grid lg:grid-cols-4 gap-12 mb-12">
-                <div>
-                    <div class="flex items-center mb-6">
-                        <svg class="h-8 w-8 text-white mr-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M19 14C19 15.6569 17.6569 17 16 17H8C6.34315 17 5 15.6569 5 14V10C5 8.34315 6.34315 7 8 7H16C17.6569 7 19 8.34315 19 10V14Z" fill="currentColor"/>
-                            <path d="M12 14C13.1046 14 14 13.1046 14 12C14 10.8954 13.1046 10 12 10C10.8954 10 10 10.8954 10 12C10 13.1046 10.8954 14 12 14Z" fill="white"/>
-                            <path d="M16 7V5C16 3.34315 14.6569 2 13 2H11C9.34315 2 8 3.34315 8 5V7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                            <path d="M8 17V19C8 20.6569 9.34315 22 11 22H13C14.6569 22 16 20.6569 16 19V17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                        </svg>
-                        <span class="text-2xl font-extrabold">MyDoc</span>
-                    </div>
-                    <p class="text-gray-400 mb-6">Solution innovante de télémédecine assistée par intelligence artificielle.</p>
-                    <div class="flex space-x-4">
-                        <a href="https://www.linkedin.com/company/projet-mydoc/" class="text-gray-400 hover:text-white transition" target="_blank">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <div>
-                    <h4 class="text-lg font-bold mb-6">Navigation</h4>
-                    <ul class="space-y-3">
-                        <li><a href="#solution" class="text-gray-400 hover:text-white transition">Notre solution</a></li>
-                        <li><a href="#technologie" class="text-gray-400 hover:text-white transition">Technologie</a></li>
-                        <li><a href="#marche" class="text-gray-400 hover:text-white transition">Marché</a></li>
-                        <li><a href="#equipe" class="text-gray-400 hover:text-white transition">Équipe</a></li>
-                        <li><a href="investissement.html" class="text-gray-400 hover:text-white transition">Investir</a></li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h4 class="text-lg font-bold mb-6">Légal</h4>
-                    <ul class="space-y-3">
-                        <li><a href="legal/conditions.html" class="text-gray-400 hover:text-white transition">Conditions d'utilisation</a></li>
-                        <li><a href="legal/politique.html" class="text-gray-400 hover:text-white transition">Politique de confidentialité</a></li>
-                        <li><a href="legal/mentions.html" class="text-gray-400 hover:text-white transition">Mentions légales</a></li>
-                        <li><a href="legal/rgpd.html" class="text-gray-400 hover:text-white transition">RGPD</a></li>
-                        <li><a href="legal/cookies.html" class="text-gray-400 hover:text-white transition">Cookies</a></li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h4 class="text-lg font-bold mb-6">Contact</h4>
-                    <ul class="space-y-3">
-                        <li class="flex items-start">
-                            <i class="fas fa-map-marker-alt text-gray-400 mt-1 mr-3"></i>
-                            <span class="text-gray-400">Paris / Nice</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-envelope text-gray-400 mt-1 mr-3"></i>
-                            <a href="mailto:contact@mydocfrance.com" class="text-gray-400 hover:text-white transition">contact@mydocfrance.com</a>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-phone-alt text-gray-400 mt-1 mr-3"></i>
-                            <a href="tel:+33750042555" class="text-gray-400 hover:text-white transition">+33 7 50 04 25 55</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="border-t border-gray-800 pt-8 text-center">
-                <p class="text-gray-500">© 2025 MyDoc. Tous droits réservés.</p>
-            </div>
+    <!-- Sécurité -->
+    <section class="section dark" id="securite">
+      <div class="wrap">
+        <span class="eyebrow">Confiance et sécurité</span>
+        <h2>Des données de santé traitées avec sérieux</h2>
+        <p class="intro">Nous construisons MyDoc dans le respect du RGPD et des règles propres aux données de santé.</p>
+        <div class="grid grid-4">
+          <div class="card"><div class="icon teal">📍</div><h3>Hébergé en France</h3><p class="muted">Données stockées à Paris, chiffrées pendant leur transfert et sur les serveurs.</p></div>
+          <div class="card"><div class="icon teal">🔒</div><h3>Accès contrôlé</h3><p class="muted">Seul votre médecin accède à votre dossier. Vous décidez des documents partagés.</p></div>
+          <div class="card"><div class="icon teal">✍️</div><h3>Ordonnances signées</h3><p class="muted">Le médecin confirme chaque ordonnance avec un code reçu par SMS.</p></div>
+          <div class="card"><div class="icon teal">🚫</div><h3>Aucune revente</h3><p class="muted">Vos données ne sont ni vendues ni utilisées à des fins publicitaires.</p></div>
         </div>
-    </footer>
+      </div>
+    </section>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="script.js"></script>
+    <!-- Entreprises -->
+    <section class="section" id="entreprises">
+      <div class="wrap">
+        <span class="eyebrow">Entreprises et partenaires</span>
+        <h2>MyDoc pour les organisations de santé</h2>
+        <p class="intro">Nous travaillons avec les acteurs qui veulent offrir un meilleur accès aux soins à leurs adhérents, salariés ou patients.</p>
+        <div class="grid grid-4">
+          <div class="card"><div class="icon">🛡️</div><h3>Mutuelles et assurances</h3><p class="muted">Un service d'orientation et de suivi médical pour vos adhérents, sans renoncer au médecin traitant.</p></div>
+          <div class="card"><div class="icon">🏥</div><h3>Centres et maisons de santé</h3><p class="muted">Des consultations mieux préparées pour absorber plus de demandes avec la même équipe.</p></div>
+          <div class="card"><div class="icon">📞</div><h3>Téléconsultation</h3><p class="muted">Une anamnèse structurée avant chaque échange pour gagner du temps médical.</p></div>
+          <div class="card"><div class="icon">🏢</div><h3>Employeurs</h3><p class="muted">Un accès simple au suivi médical pour vos équipes, en complément de la médecine du travail.</p></div>
+        </div>
+        <p style="margin-top:28px"><a class="btn btn-outline" href="mailto:contact@mydocfrance.com?subject=Partenariat%20MyDoc">Parlons de votre projet</a></p>
+      </div>
+    </section>
+
+    <!-- Télécharger -->
+    <section class="section alt" id="telecharger">
+      <div class="wrap">
+        <span class="eyebrow">Application</span>
+        <h2>MyDoc sur tous vos écrans</h2>
+        <p class="intro">Un seul compte, sur téléphone ou ordinateur.</p>
+        <div class="grid grid-3">
+          <a class="card download" href="https://app.mydocfrance.com/downloads/mydoc-france.apk">
+            <div class="icon">🤖</div>
+            <div><strong>Android</strong><span>Télécharger l'application</span></div>
+          </a>
+          <div class="card download">
+            <div class="icon">🍎</div>
+            <div><strong>iPhone</strong><span>Bientôt sur l'App Store. En attendant, la version web fonctionne sur Safari.</span></div>
+          </div>
+          <a class="card download" href="https://app.mydocfrance.com/app/">
+            <div class="icon">💻</div>
+            <div><strong>Ordinateur</strong><span>Utiliser MyDoc dans le navigateur</span></div>
+          </a>
+        </div>
+        <p class="muted" style="margin-top:16px">Sur Android, autorisez l'installation depuis votre navigateur si votre téléphone le demande. L'application arrivera prochainement sur Google Play.</p>
+      </div>
+    </section>
+
+    <!-- Équipe -->
+    <section class="section" id="equipe">
+      <div class="wrap">
+        <div class="center">
+          <span class="eyebrow">Équipe</span>
+          <h2>Les fondateurs</h2>
+          <p class="intro">Une équipe qui réunit développement commercial, technologie et finance.</p>
+        </div>
+        <div class="grid grid-3">
+          <div class="card person">
+            <img src="images/victor_veduta.jpg" alt="Victor Veduta" loading="lazy">
+            <h3>Victor Veduta</h3>
+            <div class="role">CEO &amp; co-fondateur</div>
+            <p class="muted">Plus de 10 ans d'expérience en développement commercial, stratégie et création de réseaux, dans la mobilité, la tech et les modèles innovants.</p>
+            <a href="https://www.linkedin.com/in/victor-veduta-a29597180/" target="_blank" rel="noopener">LinkedIn</a>
+          </div>
+          <div class="card person">
+            <img src="images/sebastien_rastegar.jpg" alt="Sébastien Rastegar" loading="lazy">
+            <h3>Sébastien Rastegar</h3>
+            <div class="role">CTO &amp; co-fondateur</div>
+            <p class="muted">15 ans d'expérience en systèmes distribués, cloud et algorithmique, dont plus de 5 ans sur des projets d'IA et de data science. Ancien de BNP Paribas, Alstom et Bouygues Telecom.</p>
+          </div>
+          <div class="card person">
+            <img src="images/ludovic_rocher.jpg" alt="Ludovic Rocher" loading="lazy">
+            <h3>Ludovic Rocher</h3>
+            <div class="role">CFO &amp; co-fondateur</div>
+            <p class="muted">Ingénierie informatique et finance : gestion de projet, modélisation économique et stratégie de croissance.</p>
+            <a href="https://www.linkedin.com/in/ludovic-rocher-33a562248/" target="_blank" rel="noopener">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Appel final -->
+    <section class="section" style="padding-top:0">
+      <div class="wrap">
+        <div class="cta">
+          <h2>Prêt à essayer MyDoc ?</h2>
+          <p>Créez votre espace en deux minutes, avec votre adresse e-mail ou votre compte Google.</p>
+          <div class="hero-actions">
+            <a class="btn btn-light" href="https://app.mydocfrance.com/app/?espace=patient">Je suis patient</a>
+            <a class="btn btn-ghost" href="https://app.mydocfrance.com/app/?espace=medecin">Je suis médecin</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div class="foot">
+        <div>
+          <a class="brand" href="/"><span class="logo">+</span> MyDoc France</a>
+          <p>Préparez votre consultation. Votre médecin décide.</p>
+        </div>
+        <div>
+          <h4>MyDoc</h4>
+          <a href="#patients">Patients</a>
+          <a href="#medecins">Médecins</a>
+          <a href="#entreprises">Entreprises</a>
+          <a href="investissement.html">Investir</a>
+        </div>
+        <div>
+          <h4>Informations</h4>
+          <a href="legal/mentions.html">Mentions légales</a>
+          <a href="legal/politique.html">Confidentialité</a>
+          <a href="legal/conditions.html">Conditions d'utilisation</a>
+          <a href="legal/cookies.html">Cookies</a>
+          <a href="legal/rgpd.html">Vos droits (RGPD)</a>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <a href="mailto:contact@mydocfrance.com">contact@mydocfrance.com</a>
+          <a href="https://www.linkedin.com/company/projet-mydoc/" target="_blank" rel="noopener">LinkedIn</a>
+          <span>Paris · Nice</span>
+        </div>
+      </div>
+      <div class="copy"><span>© <span data-year>2026</span> MyDoc France. Tous droits réservés.</span><span>Urgence : 15 · 112</span></div>
+    </div>
+  </footer>
+  <script src="script.js"></script>
 </body>
 </html>

@@ -1,311 +1,136 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Investir – MyDoc</title>
-
-    <!-- Favicon -->
-    <link rel="icon" href="https://imgs.search.brave.com/SSnTsMzvo11DnmFuuIeToRIx92Lzd80056KmKaz6HYI/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvMDA5ZDlmZDlm/ZmQxNmZjZWQ3YmFi/OWExMjQyMWY2ODU3/ZDAyMjM5MTlmZjhj/NjcxM2FhOTdlNDQ4/ZTMxNmRiMi93d3cu/ZmxhdGljb24uY29t/Lw" type="image/x-icon">
-
-    <!-- Meta SEO -->
-    <meta name="description" content="Investissez dans MyDoc, solution de télémédecine assistée par IA.">
-    <meta property="og:title" content="Investir – MyDoc">
-    <meta property="og:description" content="Investissez dans MyDoc, solution de télémédecine assistée par IA.">
-
-    <!-- Préchargement des assets critiques -->
-    <link rel="preload" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" as="style">
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" as="style">
-
-    <!-- CDN -->
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link href="styles.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <style>
-        .hero-gradient {
-            background: linear-gradient(135deg, #1E3A8A 0%, #3B82F6 100%);
-        }
-        .glass-card {
-            background: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Investir – MyDoc France</title>
+  <meta name="description" content="Investir dans MyDoc France : la plateforme qui prépare les consultations médicales.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%232563eb'/%3E%3Cpath d='M16 8v16M8 16h16' stroke='white' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
 </head>
-
-<body class="antialiased text-gray-800 bg-gray-50">
-    <!-- Navigation avancée -->
-    <nav class="fixed w-full z-50 transition-all duration-300" id="navbar">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-20 items-center">
-                <div class="flex items-center">
-                    <div class="flex-shrink-0 flex items-center">
-                        <svg class="h-8 w-8 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M19 14C19 15.6569 17.6569 17 16 17H8C6.34315 17 5 15.6569 5 14V10C5 8.34315 6.34315 7 8 7H16C17.6569 7 19 8.34315 19 10V14Z" fill="currentColor"/>
-                            <path d="M12 14C13.1046 14 14 13.1046 14 12C14 10.8954 13.1046 10 12 10C10.8954 10 10 10.8954 10 12C10 13.1046 10.8954 14 12 14Z" fill="white"/>
-                            <path d="M16 7V5C16 3.34315 14.6569 2 13 2H11C9.34315 2 8 3.34315 8 5V7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                            <path d="M8 17V19C8 20.6569 9.34315 22 11 22H13C14.6569 22 16 20.6569 16 19V17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                        </svg>
-                        <span class="ml-2 text-2xl font-extrabold text-white">MyDoc</span>
-                    </div>
-                </div>
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="index.html" class="text-white hover:text-gray-200 font-medium transition">Accueil</a>
-                </div>
-                <button class="md:hidden text-white focus:outline-none" id="mobile-menu-button">
-                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
-                </button>
-            </div>
+<body>
+  <header class="top">
+    <div class="wrap nav">
+      <a class="brand" href="index.html"><span class="logo">+</span> MyDoc France</a>
+      <button class="burger" aria-label="Ouvrir le menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      <nav class="menu">
+        <a href="index.html#patients">Patients</a>
+        <a href="index.html#medecins">Médecins</a>
+        <a href="index.html#entreprises">Entreprises</a>
+        <a href="index.html#equipe">Équipe</a>
+        <a href="investissement.html">Investir</a>
+        <a class="btn btn-primary btn-small" href="https://app.mydocfrance.com/app/">Se connecter</a>
+      </nav>
+    </div>
+  </header>
+  <section class="page-head"><div class="wrap"><h1>Investir dans MyDoc</h1><p>Rejoignez-nous pour rendre le temps médical plus efficace et l'accès aux soins plus simple.</p></div></section>
+  <main>
+    <section class="section">
+      <div class="wrap">
+        <div class="grid grid-2" style="align-items:start">
+          <div>
+            <span class="eyebrow">Le problème</span>
+            <h2>Trop peu de temps médical, trop de patients sans réponse</h2>
+            <p>Environ 6 millions de Français n'ont pas de médecin traitant, et les généralistes passent une grande partie de chaque consultation à recueillir des informations que le patient pourrait donner en amont.</p>
+            <span class="eyebrow" style="margin-top:20px">Notre réponse</span>
+            <p>MyDoc prépare chaque consultation. L'assistant mène l'interrogatoire, puis l'IA propose au médecin des hypothèses diagnostiques classées par probabilité, avec les examens et traitements à envisager. Le médecin vérifie et décide : c'est lui qui pose le diagnostic.</p>
+          </div>
+          <div class="card">
+            <span class="pill">Déjà fonctionnel</span>
+            <h3>Ce que fait la plateforme aujourd'hui</h3>
+            <ul class="muted">
+              <li>Application patient (web et Android) et espace médecin MyDoc Pro</li>
+              <li>Anamnèse guidée par IA (Mistral AI, modèle français) avec détection des signes d'urgence</li>
+              <li>Hypothèses diagnostiques par IA pour le médecin, avec traitements vérifiés dans la base officielle des médicaments</li>
+              <li>Ordonnances et examens signés par code SMS</li>
+              <li>Agenda, prise de rendez-vous et coffre-fort santé</li>
+              <li>Données hébergées à Paris (Google Cloud), chiffrées en transit et au repos</li>
+            </ul>
+          </div>
         </div>
-    </nav>
-
-    <!-- Hero Section avec effet parallaxe -->
-    <section class="relative h-[60vh] flex items-center justify-center overflow-hidden pt-20">
-        <div class="absolute inset-0 hero-gradient z-0"></div>
-        <div class="absolute inset-0 bg-black opacity-30 z-10"></div>
-        <div class="relative z-20 text-center px-6 max-w-5xl">
-            <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white mb-6 leading-tight" data-aos="fade-up">
-                Investissez dans MyDoc
-            </h1>
-            <p class="text-xl text-blue-100 max-w-3xl mx-auto mb-10" data-aos="fade-up" data-aos-delay="200">
-                Rejoignez-nous dans la révolution de l'accès aux soins.
-            </p>
-        </div>
+      </div>
     </section>
 
-    <!-- Investir - Section avec formulaire -->
-    <section id="investir" class="py-24 bg-white">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-20">
-                <span class="inline-block px-4 py-1 bg-blue-100 text-blue-600 rounded-full font-medium mb-4" data-aos="fade-up">Investissement</span>
-                <h2 class="text-4xl font-extrabold mb-6" data-aos="fade-up">Opportunité <span class="text-blue-600">d'investissement</span></h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto" data-aos="fade-up">Rejoignez-nous dans la révolution de l'accès aux soins</p>
-            </div>
-
-            <div class="grid lg:grid-cols-2 gap-12 mb-20">
-                <div data-aos="fade-right">
-                    <div class="bg-gray-50 p-8 rounded-2xl shadow-lg">
-                        <h3 class="text-2xl font-bold mb-6">Détails de la levée de fonds</h3>
-
-                        <div class="space-y-6">
-                            <div>
-                                <h4 class="font-bold text-lg mb-2">Montant recherché</h4>
-                                <div class="bg-white p-4 rounded-lg border border-gray-200">
-                                    <div class="text-3xl font-bold text-blue-600">1 000 000 €</div>
-                                </div>
-                            </div>
-
-                            <div>
-                                <h4 class="font-bold text-lg mb-2">Utilisation des fonds</h4>
-                                <div class="space-y-4">
-                                    <div>
-                                        <div class="flex justify-between mb-1">
-                                            <span class="font-medium">Développement technique</span>
-                                            <span class="text-blue-600 font-bold">50%</span>
-                                        </div>
-                                        <div class="w-full bg-gray-200 rounded-full h-2.5">
-                                            <div class="bg-blue-600 h-2.5 rounded-full" style="width: 50%"></div>
-                                        </div>
-                                    </div>
-
-                                    <div>
-                                        <div class="flex justify-between mb-1">
-                                            <span class="font-medium">Recrutement</span>
-                                            <span class="text-blue-600 font-bold">25%</span>
-                                        </div>
-                                        <div class="w-full bg-gray-200 rounded-full h-2.5">
-                                            <div class="bg-blue-600 h-2.5 rounded-full" style="width: 25%"></div>
-                                        </div>
-                                    </div>
-
-                                    <div>
-                                        <div class="flex justify-between mb-1">
-                                            <span class="font-medium">Marketing</span>
-                                            <span class="text-blue-600 font-bold">15%</span>
-                                        </div>
-                                        <div class="w-full bg-gray-200 rounded-full h-2.5">
-                                            <div class="bg-blue-600 h-2.5 rounded-full" style="width: 15%"></div>
-                                        </div>
-                                    </div>
-
-                                    <div>
-                                        <div class="flex justify-between mb-1">
-                                            <span class="font-medium">Conformité</span>
-                                            <span class="text-blue-600 font-bold">10%</span>
-                                        </div>
-                                        <div class="w-full bg-gray-200 rounded-full h-2.5">
-                                            <div class="bg-blue-600 h-2.5 rounded-full" style="width: 10%"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div data-aos="fade-left">
-                    <div class="bg-gray-900 text-white p-8 rounded-2xl shadow-lg">
-                        <h3 class="text-2xl font-bold mb-6 text-blue-400">Projections financières</h3>
-
-                        <div class="overflow-x-auto">
-                            <table class="min-w-full">
-                                <thead>
-                                    <tr class="border-b border-gray-700">
-                                        <th class="py-3 text-left font-medium">Année</th>
-                                        <th class="py-3 text-left font-medium">CA</th>
-                                        <th class="py-3 text-left font-medium">Dépenses</th>
-                                        <th class="py-3 text-left font-medium">Résultat</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr class="border-b border-gray-700">
-                                        <td class="py-4">1</td>
-                                        <td class="py-4">619 500 €</td>
-                                        <td class="py-4">1 040 400 €</td>
-                                        <td class="py-4 text-red-400">-420 900 €</td>
-                                    </tr>
-                                    <tr class="border-b border-gray-700">
-                                        <td class="py-4">2</td>
-                                        <td class="py-4">832 800 €</td>
-                                        <td class="py-4">1 234 400 €</td>
-                                        <td class="py-4 text-red-400">-401 600 €</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="py-4">3</td>
-                                        <td class="py-4">2 319 600 €</td>
-                                        <td class="py-4">1 524 400 €</td>
-                                        <td class="py-4 text-green-400 font-bold">+795 200 €</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-
-                        <div class="mt-8">
-                            <div class="flex items-center">
-                                <div class="flex-shrink-0 h-4 w-4 bg-blue-400 rounded-full"></div>
-                                <div class="ml-3">
-                                    <p class="text-sm text-gray-300">ROI estimé : x5 à x10 en 5 ans</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="bg-blue-600 text-white rounded-2xl shadow-xl overflow-hidden" data-aos="fade-up">
-                <div class="grid lg:grid-cols-2 gap-12 items-center">
-                    <div class="p-12">
-                        <h3 class="text-3xl font-bold mb-6">Prêt à rejoindre l'aventure MyDoc ?</h3>
-                        <p class="text-xl text-blue-100 mb-8">Contactez-nous pour plus d'informations sur cette opportunité d'investissement dans les solutions de télémédecine pour les mutuelles, les services d'urgence, les assurances, et les centres de téléconsultation 24/7.</p>
-
-                        <form action="https://formspree.io/f/xdkgzdlo" method="POST" class="space-y-4">
-                            <div>
-                                <input type="text" name="name" placeholder="Votre nom" class="w-full px-4 py-3 rounded-lg bg-blue-700 border border-blue-500 text-white placeholder-blue-300 focus:outline-none focus:ring-2 focus:ring-blue-400" required>
-                            </div>
-                            <div>
-                                <input type="email" name="email" placeholder="Votre email" class="w-full px-4 py-3 rounded-lg bg-blue-700 border border-blue-500 text-white placeholder-blue-300 focus:outline-none focus:ring-2 focus:ring-blue-400" required>
-                            </div>
-                            <div>
-                                <textarea name="message" placeholder="Votre message" rows="4" class="w-full px-4 py-3 rounded-lg bg-blue-700 border border-blue-500 text-white placeholder-blue-300 focus:outline-none focus:ring-2 focus:ring-blue-400" required></textarea>
-                            </div>
-                            <button type="submit" class="bg-white text-blue-600 px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition w-full">
-                                Envoyer la demande
-                            </button>
-                        </form>
-                    </div>
-
-                    <div class="hidden lg:block h-full">
-                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
-                             alt="Investissement MyDoc"
-                             class="w-full h-full object-cover">
-                    </div>
-                </div>
-            </div>
+    <section class="section alt">
+      <div class="wrap">
+        <span class="eyebrow">Modèle économique</span>
+        <h2>Qui paie ?</h2>
+        <div class="grid grid-3">
+          <div class="card"><div class="icon teal">🩺</div><h3>Les médecins</h3><p class="muted">Abonnement mensuel à MyDoc Pro : du temps médical gagné sur chaque consultation.</p></div>
+          <div class="card"><div class="icon teal">🛡️</div><h3>Les organisations</h3><p class="muted">Mutuelles, assureurs, centres de santé et employeurs : licence pour leurs adhérents ou leurs équipes.</p></div>
+          <div class="card"><div class="icon teal">🙋</div><h3>Les patients</h3><p class="muted">Accès gratuit à l'essentiel. Les consultations restent prises en charge selon les règles de l'Assurance Maladie.</p></div>
         </div>
+      </div>
     </section>
 
-    <!-- Footer avancé -->
-    <footer class="bg-gray-900 text-white pt-20 pb-12">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="grid lg:grid-cols-4 gap-12 mb-12">
-                <div>
-                    <div class="flex items-center mb-6">
-                        <svg class="h-8 w-8 text-white mr-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M19 14C19 15.6569 17.6569 17 16 17H8C6.34315 17 5 15.6569 5 14V10C5 8.34315 6.34315 7 8 7H16C17.6569 7 19 8.34315 19 10V14Z" fill="currentColor"/>
-                            <path d="M12 14C13.1046 14 14 13.1046 14 12C14 10.8954 13.1046 10 12 10C10.8954 10 10 10.8954 10 12C10 13.1046 10.8954 14 12 14Z" fill="white"/>
-                            <path d="M16 7V5C16 3.34315 14.6569 2 13 2H11C9.34315 2 8 3.34315 8 5V7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                            <path d="M8 17V19C8 20.6569 9.34315 22 11 22H13C14.6569 22 16 20.6569 16 19V17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                        </svg>
-                        <span class="text-2xl font-extrabold">MyDoc</span>
-                    </div>
-                    <p class="text-gray-400 mb-6">Solution innovante de télémédecine assistée par intelligence artificielle.</p>
-                    <div class="flex space-x-4">
-                        <a href="https://www.linkedin.com/company/projet-mydoc/" class="text-gray-400 hover:text-white transition" target="_blank">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <div>
-                    <h4 class="text-lg font-bold mb-6">Navigation</h4>
-                    <ul class="space-y-3">
-                        <li><a href="index.html" class="text-gray-400 hover:text-white transition">Accueil</a></li>
-                        <li><a href="#technologie" class="text-gray-400 hover:text-white transition">Technologie</a></li>
-                        <li><a href="#marche" class="text-gray-400 hover:text-white transition">Marché</a></li>
-                        <li><a href="#equipe" class="text-gray-400 hover:text-white transition">Équipe</a></li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h4 class="text-lg font-bold mb-6">Légal</h4>
-                    <ul class="space-y-3">
-                        <li><a href="legal/conditions.html" class="text-gray-400 hover:text-white transition">Conditions d'utilisation</a></li>
-                        <li><a href="legal/politique.html" class="text-gray-400 hover:text-white transition">Politique de confidentialité</a></li>
-                        <li><a href="legal/mentions.html" class="text-gray-400 hover:text-white transition">Mentions légales</a></li>
-                        <li><a href="legal/rgpd.html" class="text-gray-400 hover:text-white transition">RGPD</a></li>
-                        <li><a href="legal/cookies.html" class="text-gray-400 hover:text-white transition">Cookies</a></li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h4 class="text-lg font-bold mb-6">Contact</h4>
-                    <ul class="space-y-3">
-                        <li class="flex items-start">
-                            <i class="fas fa-map-marker-alt text-gray-400 mt-1 mr-3"></i>
-                            <span class="text-gray-400">Paris / Nice</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-envelope text-gray-400 mt-1 mr-3"></i>
-                            <a href="mailto:contact@mydocfrance.com" class="text-gray-400 hover:text-white transition">contact@mydocfrance.com</a>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-phone-alt text-gray-400 mt-1 mr-3"></i>
-                            <a href="tel:+33750042555" class="text-gray-400 hover:text-white transition">+33 7 50 04 25 55</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="border-t border-gray-800 pt-8 text-center">
-                <p class="text-gray-500">© 2025 MyDoc. Tous droits réservés.</p>
-            </div>
+    <section class="section">
+      <div class="wrap">
+        <div class="grid grid-2" style="align-items:start">
+          <div>
+            <span class="eyebrow">Levée de fonds</span>
+            <h2>1 000 000 € pour passer à l'échelle</h2>
+            <p class="muted">Ces fonds financeront la mise en conformité (hébergement certifié HDS, évaluation du statut de dispositif médical), les premiers déploiements auprès de médecins et de partenaires, et le renforcement de l'équipe.</p>
+            <p class="muted">Le dossier investisseur et le prévisionnel financier détaillé sont disponibles sur demande.</p>
+            <a class="btn btn-primary" href="mailto:contact@mydocfrance.com?subject=Investir%20dans%20MyDoc">Recevoir le dossier investisseur</a>
+          </div>
+          <div class="card">
+            <h3>Utilisation des fonds</h3>
+            <table>
+              <tr><th>Développement produit</th><td>50 %</td></tr>
+              <tr><th>Recrutement</th><td>25 %</td></tr>
+              <tr><th>Marketing et déploiement</th><td>15 %</td></tr>
+              <tr><th>Conformité et certification</th><td>10 %</td></tr>
+            </table>
+          </div>
         </div>
-    </footer>
+      </div>
+    </section>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="script.js"></script>
-
-    <script>
-        AOS.init({
-            duration: 800,
-            easing: 'ease-in-out',
-            once: true
-        });
-    </script>
+    <section class="section alt">
+      <div class="wrap">
+        <span class="eyebrow">Feuille de route</span>
+        <h2>Où nous en sommes</h2>
+        <div class="grid grid-4">
+          <div class="card"><span class="pill">Fait</span><h3>Produit</h3><p class="muted">Application patient, MyDoc Pro, IA, signature SMS, coffre-fort.</p></div>
+          <div class="card"><span class="pill soon">En cours</span><h3>Conformité</h3><p class="muted">Validation juridique, migration vers un hébergeur certifié HDS, analyse d'impact (AIPD).</p></div>
+          <div class="card"><span class="pill soon">À venir</span><h3>Pilotes</h3><p class="muted">Premiers médecins et premiers partenaires en conditions réelles.</p></div>
+          <div class="card"><span class="pill soon">À venir</span><h3>Diffusion</h3><p class="muted">Google Play, App Store et partenariats avec les organisations de santé.</p></div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="wrap">
+      <div class="foot">
+        <div>
+          <a class="brand" href="index.html"><span class="logo">+</span> MyDoc France</a>
+          <p>Préparez votre consultation. Votre médecin décide.</p>
+        </div>
+        <div>
+          <h4>MyDoc</h4>
+          <a href="index.html#patients">Patients</a>
+          <a href="index.html#medecins">Médecins</a>
+          <a href="index.html#entreprises">Entreprises</a>
+          <a href="investissement.html">Investir</a>
+        </div>
+        <div>
+          <h4>Informations</h4>
+          <a href="legal/mentions.html">Mentions légales</a>
+          <a href="legal/politique.html">Confidentialité</a>
+          <a href="legal/conditions.html">Conditions d'utilisation</a>
+          <a href="legal/cookies.html">Cookies</a>
+          <a href="legal/rgpd.html">Vos droits (RGPD)</a>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <a href="mailto:contact@mydocfrance.com">contact@mydocfrance.com</a>
+          <a href="https://www.linkedin.com/company/projet-mydoc/" target="_blank" rel="noopener">LinkedIn</a>
+          <span>Paris · Nice</span>
+        </div>
+      </div>
+      <div class="copy"><span>© <span data-year>2026</span> MyDoc France. Tous droits réservés.</span><span>Urgence : 15 · 112</span></div>
+    </div>
+  </footer>
+  <script src="script.js"></script>
 </body>
 </html>

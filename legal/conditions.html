@@ -1,251 +1,78 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Conditions d'utilisation – MyDoc</title>
-
-    <!-- Favicon -->
-    <link rel="icon" href="https://imgs.search.brave.com/SSnTsMzvo11DnmFuuIeToRIx92Lzd80056KmKaz6HYI/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvMDA5ZDlmZDlm/ZmQxNmZjZWQ3YmFi/OWExMjQyMWY2ODU3/ZDAyMjM5MTlmZjhj/NjcxM2FhOTdlNDQ4/ZTMxNmRiMi93d3cu/ZmxhdGljb24uY29t/Lw" type="image/x-icon">
-
-    <!-- Meta SEO -->
-    <meta name="description" content="Conditions générales d'utilisation de MyDoc, solution de télémédecine assistée par IA.">
-    <meta property="og:title" content="Conditions d'utilisation – MyDoc">
-    <meta property="og:description" content="Conditions générales d'utilisation de MyDoc, solution de télémédecine assistée par IA.">
-
-    <!-- Préchargement des assets critiques -->
-    <link rel="preload" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" as="style">
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" as="style">
-
-    <!-- CDN -->
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link href="../styles.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <style>
-        .hero-gradient {
-            background: linear-gradient(135deg, #1E3A8A 0%, #3B82F6 100%);
-        }
-        .glass-card {
-            background: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Conditions d'utilisation – MyDoc France</title>
+  <meta name="description" content="Conditions d'utilisation de MyDoc France.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%232563eb'/%3E%3Cpath d='M16 8v16M8 16h16' stroke='white' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="../styles.css">
 </head>
-
-<body class="antialiased text-gray-800 bg-gray-50">
-    <!-- Navigation avancée -->
-    <nav class="fixed w-full z-50 transition-all duration-300" id="navbar">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-20 items-center">
-                <div class="flex items-center">
-                    <div class="flex-shrink-0 flex items-center">
-                        <svg class="h-8 w-8 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M19 14C19 15.6569 17.6569 17 16 17H8C6.34315 17 5 15.6569 5 14V10C5 8.34315 6.34315 7 8 7H16C17.6569 7 19 8.34315 19 10V14Z" fill="currentColor"/>
-                            <path d="M12 14C13.1046 14 14 13.1046 14 12C14 10.8954 13.1046 10 12 10C10.8954 10 10 10.8954 10 12C10 13.1046 10.8954 14 12 14Z" fill="white"/>
-                            <path d="M16 7V5C16 3.34315 14.6569 2 13 2H11C9.34315 2 8 3.34315 8 5V7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                            <path d="M8 17V19C8 20.6569 9.34315 22 11 22H13C14.6569 22 16 20.6569 16 19V17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                        </svg>
-                        <span class="ml-2 text-2xl font-extrabold text-white">MyDoc</span>
-                    </div>
-                </div>
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="../index.html" class="text-white hover:text-gray-200 font-medium transition">Accueil</a>
-                </div>
-                <button class="md:hidden text-white focus:outline-none" id="mobile-menu-button">
-                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
-                </button>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Hero Section avec effet parallaxe -->
-<section class="relative h-[60vh] flex items-center justify-center overflow-hidden pt-20">
-    <div class="absolute inset-0 hero-gradient z-0"></div>
-    <div class="absolute inset-0 bg-black opacity-30 z-10"></div>
-    <div class="relative z-20 text-center px-6 max-w-5xl">
-        <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white mb-6 leading-tight" data-aos="fade-up">
-            Conditions Générales d'Utilisation
-        </h1>
-        <p class="text-xl text-blue-100 max-w-3xl mx-auto mb-10" data-aos="fade-up" data-aos-delay="200">
-            Veuillez lire attentivement les présentes conditions avant d'utiliser notre plateforme.
-        </p>
+<body>
+  <header class="top">
+    <div class="wrap nav">
+      <a class="brand" href="../index.html"><span class="logo">+</span> MyDoc France</a>
+      <button class="burger" aria-label="Ouvrir le menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      <nav class="menu">
+        <a href="../index.html#patients">Patients</a>
+        <a href="../index.html#medecins">Médecins</a>
+        <a href="../index.html#entreprises">Entreprises</a>
+        <a href="../index.html#equipe">Équipe</a>
+        <a href="../investissement.html">Investir</a>
+        <a class="btn btn-primary btn-small" href="https://app.mydocfrance.com/app/">Se connecter</a>
+      </nav>
     </div>
-</section>
+  </header>
+  <section class="page-head"><div class="wrap"><h1>Conditions d'utilisation</h1><p>Les règles d'utilisation de MyDoc.</p></div></section>
+  <main>
+    <div class="wrap legal">
+<p class="todo">Document en cours de validation juridique. Les éléments entre crochets sont à compléter avant l'ouverture du service au public.</p>
 
-
-
-    <!-- Conditions - Section interactive -->
-    <section class="py-24 bg-white relative overflow-hidden">
-        <div class="absolute -right-32 -top-32 w-64 h-64 bg-blue-100 rounded-full opacity-20"></div>
-        <div class="absolute -left-32 -bottom-32 w-64 h-64 bg-green-100 rounded-full opacity-20"></div>
-
-        <div class="max-w-7xl mx-auto px-6 relative z-10">
-            <div class="text-center mb-20">
-                <span class="inline-block px-4 py-1 bg-blue-100 text-blue-600 rounded-full font-medium mb-4" data-aos="fade-up">Légal</span>
-                <h2 class="text-4xl font-extrabold mb-6" data-aos="fade-up">Nos <span class="text-blue-600">conditions</span></h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto" data-aos="fade-up">Conditions générales d'utilisation de la plateforme MyDoc</p>
-            </div>
-
-            <div class="space-y-12">
-                <div class="glass-card p-8 rounded-2xl shadow-lg" data-aos="fade-right">
-                    <h3 class="text-2xl font-bold mb-4 text-blue-600">1. Introduction</h3>
-                    <p class="text-gray-600">Bienvenue sur MyDoc, la plateforme d'accompagnement médical assistée par intelligence artificielle. Ces conditions générales d'utilisation (CGU) définissent les modalités d'accès et d'utilisation de nos services.</p>
-                </div>
-
-                <div class="glass-card p-8 rounded-2xl shadow-lg" data-aos="fade-up">
-                    <h3 class="text-2xl font-bold mb-4 text-blue-600">2. Acceptation des conditions</h3>
-                    <p class="text-gray-600">En accédant à notre plateforme et en utilisant nos services, vous acceptez sans réserve les présentes CGU. Si vous n'acceptez pas ces conditions, nous vous demandons de ne pas utiliser nos services.</p>
-                </div>
-
-                <div class="glass-card p-8 rounded-2xl shadow-lg" data-aos="fade-left">
-                    <h3 class="text-2xl font-bold mb-4 text-blue-600">3. Description des services</h3>
-                    <p class="text-gray-600">MyDoc propose une solution innovante combinant intelligence artificielle et expertise médicale humaine pour :</p>
-                    <ul class="list-disc pl-8 mt-4 space-y-2 text-gray-600">
-                        <li>Effectuer une première analyse de vos symptômes</li>
-                        <li>Fournir une orientation médicale préliminaire</li>
-                        <li>Faciliter la connexion avec des professionnels de santé</li>
-                        <li>Assurer un suivi personnalisé de votre état de santé</li>
-                    </ul>
-                    <p class="mt-4 text-gray-600">Nos services ne remplacent pas une consultation médicale en personne mais viennent en complément de celle-ci.</p>
-                </div>
-
-                <div class="glass-card p-8 rounded-2xl shadow-lg" data-aos="fade-right">
-                    <h3 class="text-2xl font-bold mb-4 text-blue-600">4. Responsabilités de l'utilisateur</h3>
-                    <p class="text-gray-600">En utilisant MyDoc, vous vous engagez à :</p>
-                    <ul class="list-disc pl-8 mt-4 space-y-2 text-gray-600">
-                        <li>Fournir des informations exactes et complètes concernant votre état de santé</li>
-                        <li>Maintenir la confidentialité de vos identifiants de connexion</li>
-                        <li>Utiliser nos services de manière conforme à leur destination</li>
-                        <li>Respecter toutes les lois et réglementations applicables</li>
-                    </ul>
-                </div>
-
-                <div class="glass-card p-8 rounded-2xl shadow-lg" data-aos="fade-up">
-                    <h3 class="text-2xl font-bold mb-4 text-blue-600">5. Protection des données</h3>
-                    <p class="text-gray-600">La protection de vos données personnelles et médicales est notre priorité absolue. Nous nous engageons à :</p>
-                    <ul class="list-disc pl-8 mt-4 space-y-2 text-gray-600">
-                        <li>Traiter vos données conformément au RGPD et aux réglementations françaises</li>
-                        <li>Stocker vos informations sur des serveurs sécurisés et certifiés HDS</li>
-                        <li>Ne jamais partager vos données sans votre consentement explicite</li>
-                        <li>Mettre en place des mesures de sécurité avancées pour protéger vos informations</li>
-                    </ul>
-                </div>
-
-                <div class="glass-card p-8 rounded-2xl shadow-lg" data-aos="fade-left">
-                    <h3 class="text-2xl font-bold mb-4 text-blue-600">6. Limitations de responsabilité</h3>
-                    <p class="text-gray-600">Bien que nous mettions tout en œuvre pour fournir des services de qualité, MyDoc ne peut être tenu responsable :</p>
-                    <ul class="list-disc pl-8 mt-4 space-y-2 text-gray-600">
-                        <li>Des erreurs ou omissions dans les informations fournies par l'IA</li>
-                        <li>Des interprétations erronées des résultats par l'utilisateur</li>
-                        <li>Des problèmes techniques indépendants de notre volonté</li>
-                        <li>Des conséquences résultant d'une utilisation non conforme de nos services</li>
-                    </ul>
-                    <p class="mt-4 text-gray-600 font-semibold">Rappel important : MyDoc ne remplace pas un avis médical professionnel. En cas de symptômes graves ou persistants, consultez immédiatement un médecin.</p>
-                </div>
-
-                <div class="glass-card p-8 rounded-2xl shadow-lg" data-aos="fade-right">
-                    <h3 class="text-2xl font-bold mb-4 text-blue-600">7. Modification des conditions</h3>
-                    <p class="text-gray-600">Nous nous réservons le droit de modifier ces conditions générales d'utilisation à tout moment. Les modifications entreront en vigueur dès leur publication sur notre plateforme. Nous vous encourageons à consulter régulièrement cette page pour rester informé des éventuelles mises à jour.</p>
-                </div>
-
-                <div class="glass-card p-8 rounded-2xl shadow-lg" data-aos="fade-up">
-                    <h3 class="text-2xl font-bold mb-4 text-blue-600">8. Droit applicable et litiges</h3>
-                    <p class="text-gray-600">Les présentes conditions sont régies par le droit français. Tout litige relatif à l'interprétation ou à l'exécution de ces conditions sera soumis à la compétence exclusive des tribunaux français.</p>
-                </div>
-
-                <div class="glass-card p-8 rounded-2xl shadow-lg" data-aos="fade-left">
-                    <h3 class="text-2xl font-bold mb-4 text-blue-600">9. Contact</h3>
-                    <p class="text-gray-600">Pour toute question concernant ces conditions générales d'utilisation, vous pouvez nous contacter à l'adresse suivante :</p>
-                    <p class="mt-4 text-gray-600"><i class="fas fa-envelope mr-2"></i> <a href="mailto:contact@mydocfrance.com" class="text-blue-600 hover:underline">contact@mydocfrance.com</a></p>
-                </div>
-            </div>
+<p>Les conditions générales d'utilisation complètes sont présentées et acceptées lors de la création de votre compte dans l'application.</p>
+<h2>Principes essentiels</h2>
+<ul>
+<li>MyDoc aide à préparer une consultation. Les hypothèses diagnostiques de l'IA sont transmises au médecin, jamais présentées au patient comme un diagnostic.</li>
+<li>Seul votre médecin analyse votre dossier, pose le diagnostic et prescrit.</li>
+<li>MyDoc n'est pas un service d'urgence : en cas d'urgence, appelez le 15 ou le 112.</li>
+<li>Vous vous engagez à fournir des informations exactes et à ne pas déposer de contenus illicites.</li>
+<li>Les médecins utilisant MyDoc Pro sont inscrits à l'Ordre et signent leurs prescriptions.</li>
+</ul>
+<h2>Contact</h2>
+<p><a href="mailto:contact@mydocfrance.com">contact@mydocfrance.com</a></p>
+    </div>
+  </main>
+  <footer>
+    <div class="wrap">
+      <div class="foot">
+        <div>
+          <a class="brand" href="../index.html"><span class="logo">+</span> MyDoc France</a>
+          <p>Préparez votre consultation. Votre médecin décide.</p>
         </div>
-    </section>
-
-    <!-- Footer avancé -->
-    <footer class="bg-gray-900 text-white pt-20 pb-12">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="grid lg:grid-cols-4 gap-12 mb-12">
-                <div>
-                    <div class="flex items-center mb-6">
-                        <svg class="h-8 w-8 text-white mr-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M19 14C19 15.6569 17.6569 17 16 17H8C6.34315 17 5 15.6569 5 14V10C5 8.34315 6.34315 7 8 7H16C17.6569 7 19 8.34315 19 10V14Z" fill="currentColor"/>
-                            <path d="M12 14C13.1046 14 14 13.1046 14 12C14 10.8954 13.1046 10 12 10C10.8954 10 10 10.8954 10 12C10 13.1046 10.8954 14 12 14Z" fill="white"/>
-                            <path d="M16 7V5C16 3.34315 14.6569 2 13 2H11C9.34315 2 8 3.34315 8 5V7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                            <path d="M8 17V19C8 20.6569 9.34315 22 11 22H13C14.6569 22 16 20.6569 16 19V17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                        </svg>
-                        <span class="text-2xl font-extrabold">MyDoc</span>
-                    </div>
-                    <p class="text-gray-400 mb-6">Solution innovante de télémédecine assistée par intelligence artificielle.</p>
-                    <div class="flex space-x-4">
-                        <a href="https://www.linkedin.com/company/projet-mydoc/" class="text-gray-400 hover:text-white transition" target="_blank">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <div>
-                    <h4 class="text-lg font-bold mb-6">Navigation</h4>
-                    <ul class="space-y-3">
-                        <li><a href="../index.html" class="text-gray-400 hover:text-white transition">Accueil</a></li>
-                        <li><a href="../index.html#technologie" class="text-gray-400 hover:text-white transition">Technologie</a></li>
-                        <li><a href="../index.html#marche" class="text-gray-400 hover:text-white transition">Marché</a></li>
-                        <li><a href="../index.html#equipe" class="text-gray-400 hover:text-white transition">Équipe</a></li>
-                        <li><a href="../investissement.html" class="text-gray-400 hover:text-white transition">Investir</a></li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h4 class="text-lg font-bold mb-6">Légal</h4>
-                    <ul class="space-y-3">
-                        <li><a href="conditions.html" class="text-gray-400 hover:text-white transition">Conditions d'utilisation</a></li>
-                        <li><a href="politique.html" class="text-gray-400 hover:text-white transition">Politique de confidentialité</a></li>
-                        <li><a href="mentions.html" class="text-gray-400 hover:text-white transition">Mentions légales</a></li>
-                        <li><a href="rgpd.html" class="text-gray-400 hover:text-white transition">RGPD</a></li>
-                        <li><a href="cookies.html" class="text-gray-400 hover:text-white transition">Cookies</a></li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h4 class="text-lg font-bold mb-6">Contact</h4>
-                    <ul class="space-y-3">
-                        <li class="flex items-start">
-                            <i class="fas fa-map-marker-alt text-gray-400 mt-1 mr-3"></i>
-                            <span class="text-gray-400">Paris / Nice</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-envelope text-gray-400 mt-1 mr-3"></i>
-                            <a href="mailto:contact@mydocfrance.com" class="text-gray-400 hover:text-white transition">contact@mydocfrance.com</a>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-phone-alt text-gray-400 mt-1 mr-3"></i>
-                            <a href="tel:+33750042555" class="text-gray-400 hover:text-white transition">+33 7 50 04 25 55</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="border-t border-gray-800 pt-8 text-center">
-                <p class="text-gray-500">© 2025 MyDoc. Tous droits réservés.</p>
-            </div>
+        <div>
+          <h4>MyDoc</h4>
+          <a href="../index.html#patients">Patients</a>
+          <a href="../index.html#medecins">Médecins</a>
+          <a href="../index.html#entreprises">Entreprises</a>
+          <a href="../investissement.html">Investir</a>
         </div>
-    </footer>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="../script.js"></script>
-
-    <script>
-        AOS.init({
-            duration: 800,
-            easing: 'ease-in-out',
-            once: true
-        });
-    </script>
+        <div>
+          <h4>Informations</h4>
+          <a href="../legal/mentions.html">Mentions légales</a>
+          <a href="../legal/politique.html">Confidentialité</a>
+          <a href="../legal/conditions.html">Conditions d'utilisation</a>
+          <a href="../legal/cookies.html">Cookies</a>
+          <a href="../legal/rgpd.html">Vos droits (RGPD)</a>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <a href="mailto:contact@mydocfrance.com">contact@mydocfrance.com</a>
+          <a href="https://www.linkedin.com/company/projet-mydoc/" target="_blank" rel="noopener">LinkedIn</a>
+          <span>Paris · Nice</span>
+        </div>
+      </div>
+      <div class="copy"><span>© <span data-year>2026</span> MyDoc France. Tous droits réservés.</span><span>Urgence : 15 · 112</span></div>
+    </div>
+  </footer>
+  <script src="../script.js"></script>
 </body>
 </html>
