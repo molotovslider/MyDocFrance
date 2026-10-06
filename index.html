@@ -7,13 +7,13 @@
   <meta name="description" content="MyDoc prépare votre consultation : un assistant vous pose les bonnes questions, votre médecin reçoit un dossier clair et vous répond. Rendez-vous, ordonnances signées et coffre-fort santé sécurisé.">
   <meta property="og:title" content="MyDoc France">
   <meta property="og:description" content="Préparez votre consultation. Votre médecin décide.">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%232563eb'/%3E%3Cpath d='M16 8v16M8 16h16' stroke='white' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E">
+  <link rel="icon" type="image/svg+xml" href="images/logo.svg">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header class="top">
     <div class="wrap nav">
-      <a class="brand" href="/"><span class="logo">+</span> MyDoc France</a>
+      <a class="brand" href="/"><img class="logo-img" src="images/logo.svg" alt="" width="36" height="36"> My<span class="brand-doc">Doc</span> France</a>
       <button class="burger" aria-label="Ouvrir le menu" aria-expanded="false"><span></span><span></span><span></span></button>
       <nav class="menu">
         <a href="#patients">Patients</a>
@@ -42,16 +42,28 @@
         <div class="phone" aria-hidden="true">
           <div class="screen">
             <div class="screen-head"><small>Consultation</small><strong>Assistant MyDoc</strong></div>
-            <div class="chat">
+            <div class="chat" id="demo-chat">
               <div class="bubble ai">Bonjour, qu'est-ce qui vous amène aujourd'hui ?</div>
               <div class="bubble me">J'ai mal à la gorge depuis 3 jours.</div>
               <div class="bubble ai">Avez-vous de la fièvre ? Si oui, combien ?</div>
               <div class="bubble me">38,5 hier soir.</div>
               <div class="bubble ai">Avez-vous du mal à avaler votre salive ?</div>
+              <div class="typing"><span></span><span></span><span></span></div>
             </div>
-            <div class="screen-foot">✓ Dossier envoyé au Dr Martin</div>
+            <div class="screen-foot" id="demo-foot">✓ Dossier envoyé au Dr Martin</div>
           </div>
         </div>
+      </div>
+    </section>
+
+
+    <!-- Chiffres clés -->
+    <section class="stats">
+      <div class="wrap stats-grid">
+        <div class="stat"><strong data-count="133000" data-suffix=" +">133 000 +</strong><span>médecins référencés en France</span></div>
+        <div class="stat"><strong data-count="15">15</strong><span>spécialités pour vous orienter</span></div>
+        <div class="stat"><strong data-count="100" data-suffix=" %">100 %</strong><span>des données hébergées en France</span></div>
+        <div class="stat"><strong>24 h/24</strong><span>pour préparer votre consultation</span></div>
       </div>
     </section>
 
@@ -211,7 +223,7 @@
     <div class="wrap">
       <div class="foot">
         <div>
-          <a class="brand" href="/"><span class="logo">+</span> MyDoc France</a>
+          <a class="brand" href="/"><img class="logo-img" src="images/logo.svg" alt="" width="36" height="36"> My<span class="brand-doc">Doc</span> France</a>
           <p>Préparez votre consultation. Votre médecin décide.</p>
         </div>
         <div>
