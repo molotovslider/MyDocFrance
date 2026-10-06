@@ -159,64 +159,80 @@ if ('IntersectionObserver' in window) {
     return a;
   };
 
-  // Page d'accueil
-  if (document.querySelector('[data-cms]')) {
-    load('site/home').then((c) => {
-      if (!c) return;
-      const fields = c.fields || {};
-      document.querySelectorAll('[data-cms]').forEach((node) => {
-        const v = fields[node.dataset.cms];
-        if (v === undefined || v === null) return;
-        if (node.tagName === 'UL') {
-          if (!Array.isArray(v)) return;
-          node.textContent = '';
-          v.filter(Boolean).forEach((item) => node.appendChild(el('li', '', item)));
-        } else if (node.tagName === 'A') {
-          if (v.text) node.textContent = v.text;
-          const url = safeHref(v.href);
-          if (url) node.href = url;
-        } else {
-          node.removeAttribute('data-count');
-          rich(node, v, false);
-        }
-      });
-      (c.hidden || []).forEach((id) => {
-        const s = document.querySelector(`[data-cms-section="${id}"]`);
-        if (s) s.hidden = true;
-      });
-      // Bandeau d'annonce
-      const a = c.announcement || {};
-      const bar = document.querySelector('[data-cms-announce]');
-      if (bar && a.active && a.text) {
+  // Page d'accueil. applyHome peut être rejouée (éditeur visuel de l'administration) :
+  // chaque appel repart de zéro pour les sections masquées, le bandeau, les actualités et les ajouts.
+  const editor = () => document.documentElement.classList.contains('cms-editor');
+  const setField = (node, v) => {
+    if (v === undefined || v === null) return;
+    if (node.tagName === 'UL') {
+      if (!Array.isArray(v)) return;
+      node.textContent = '';
+      v.filter(Boolean).forEach((item) => node.appendChild(el('li', '', item)));
+    } else if (node.tagName === 'A') {
+      if (typeof v.text === 'string') node.textContent = v.text;
+      const url = safeHref(v.href);
+      if (url) node.setAttribute('href', url);
+    } else {
+      node.removeAttribute('data-count');
+      rich(node, v, false);
+    }
+  };
+  window.mydocSetField = (key, v) => {
+    const node = document.querySelector(`[data-cms="${key}"]`);
+    if (node) setField(node, v);
+  };
+  const applyHome = (c, opts = {}) => {
+    if (!c) return;
+    const fields = c.fields || {};
+    if (opts.fields !== false) {
+      document.querySelectorAll('[data-cms]').forEach((node) => setField(node, fields[node.dataset.cms]));
+    }
+    // Sections masquées (dans l'éditeur : affichées en transparence).
+    const hidden = new Set(c.hidden || []);
+    document.querySelectorAll('[data-cms-section]').forEach((s) => {
+      const off = hidden.has(s.dataset.cmsSection);
+      if (editor()) s.classList.toggle('cms-hidden', off);
+      else s.hidden = off;
+    });
+    // Bandeau d'annonce
+    const a = c.announcement || {};
+    const bar = document.querySelector('[data-cms-announce]');
+    if (bar) {
+      const link = bar.querySelector('.announce-link');
+      link.hidden = true;
+      bar.hidden = !(a.active && a.text);
+      if (!bar.hidden) {
         rich(bar.querySelector('.announce-text'), a.text, false);
-        const link = bar.querySelector('.announce-link');
         const url = safeHref(a.href);
         if (url && a.linkText) { link.textContent = a.linkText; link.href = url; link.hidden = false; }
-        bar.hidden = false;
       }
-      // Actualités
-      const news = (c.news || []).filter((n) => n && n.title);
-      const box = document.querySelector('[data-cms-news]');
-      if (box && news.length) {
-        if (c.newsTitle) box.querySelector('.news-title').textContent = c.newsTitle;
-        const grid = box.querySelector('.news');
-        news.forEach((n) => {
-          const card = el('article', 'card news-item');
-          if (n.date) {
-            const d = new Date(n.date);
-            card.appendChild(el('span', 'news-date')).textContent =
-              isNaN(d) ? n.date : d.toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' });
-          }
-          card.appendChild(el('h3')).textContent = n.title;
-          if (n.text) card.appendChild(el('p', 'muted', n.text));
-          const b = button(n.linkText, n.href, 'news-link');
-          if (b) card.appendChild(b);
-          grid.appendChild(card);
-        });
-        box.hidden = false;
-      }
-      // Sections ajoutées
-      const custom = document.querySelector('[data-cms-custom]');
+    }
+    // Actualités
+    const news = (c.news || []).filter((n) => n && n.title);
+    const box = document.querySelector('[data-cms-news]');
+    if (box) {
+      const grid = box.querySelector('.news');
+      grid.textContent = '';
+      box.querySelector('.news-title').textContent = c.newsTitle || 'Les nouvelles de MyDoc';
+      news.forEach((n) => {
+        const card = el('article', 'card news-item');
+        if (n.date) {
+          const d = new Date(n.date);
+          card.appendChild(el('span', 'news-date')).textContent =
+            isNaN(d) ? n.date : d.toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' });
+        }
+        card.appendChild(el('h3')).textContent = n.title;
+        if (n.text) card.appendChild(el('p', 'muted', n.text));
+        const b = button(n.linkText, n.href, 'news-link');
+        if (b) card.appendChild(b);
+        grid.appendChild(card);
+      });
+      box.hidden = !news.length;
+    }
+    // Sections ajoutées
+    const custom = document.querySelector('[data-cms-custom]');
+    if (custom) {
+      custom.textContent = '';
       (c.custom || []).filter((x) => x && x.title).forEach((x, i) => {
         const section = el('section', `section${i % 2 ? '' : ' alt'} custom-section`);
         const wrap = section.appendChild(el('div', 'wrap'));
@@ -227,7 +243,11 @@ if ('IntersectionObserver' in window) {
         if (b) wrap.appendChild(b);
         custom.appendChild(section);
       });
-    });
+    }
+  };
+  window.mydocApplyHome = applyHome;
+  if (document.querySelector('[data-cms]') && !window.MYDOC_EDITOR) {
+    load('site/home').then((c) => applyHome(c));
   }
 
   // Pages juridiques
@@ -263,6 +283,7 @@ if ('IntersectionObserver' in window) {
 
 // ---------- Mesure d'audience sans cookie (compteur MyDoc, aucune donnée personnelle) ----------
 (() => {
+  if (window.MYDOC_EDITOR) return; // aperçu de l'éditeur : pas une visite
   try {
     const today = new Date().toISOString().slice(0, 10);
     const first = localStorage.getItem('mydoc_visite') !== today; // seule la date est mémorisée
