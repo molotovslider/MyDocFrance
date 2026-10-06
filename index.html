@@ -7,6 +7,9 @@
   <meta name="description" content="MyDoc prépare votre consultation : un assistant vous pose les bonnes questions, votre médecin reçoit un dossier clair et vous répond. Rendez-vous, ordonnances signées et coffre-fort santé sécurisé.">
   <meta property="og:title" content="MyDoc France">
   <meta property="og:description" content="Préparez votre consultation. Votre médecin décide.">
+  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/images/icon-192.png">
+  <meta name="apple-mobile-web-app-title" content="MyDoc">
   <link rel="icon" type="image/svg+xml" href="images/logo.svg">
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -25,19 +28,20 @@
       </nav>
     </div>
   </header>
+  <div class="site-announce" data-cms-announce hidden><div class="wrap"><span class="announce-text"></span> <a class="announce-link" hidden></a></div></div>
 
   <main>
     <!-- Accueil -->
-    <section class="hero">
+    <section class="hero" data-cms-section="hero">
       <div class="wrap hero-grid">
         <div>
-          <h1>Préparez votre consultation.<br>Votre médecin décide.</h1>
-          <p class="lead">Un assistant vous pose les bonnes questions, comme le ferait votre médecin. Il reçoit un dossier clair, donne son avis et vous répond, avec une ordonnance signée si besoin.</p>
+          <h1 data-cms="hero.1">Préparez votre consultation.<br>Votre médecin décide.</h1>
+          <p class="lead" data-cms="hero.2">Un assistant vous pose les bonnes questions, comme le ferait votre médecin. Il reçoit un dossier clair, donne son avis et vous répond, avec une ordonnance signée si besoin.</p>
           <div class="hero-actions">
-            <a class="btn btn-light" href="https://app.mydocfrance.com/app/?espace=patient">Je suis patient</a>
-            <a class="btn btn-ghost" href="https://app.mydocfrance.com/app/?espace=medecin">Je suis médecin</a>
+            <a class="btn btn-light" href="https://app.mydocfrance.com/app/?espace=patient" data-cms="hero.3">Je suis patient</a>
+            <a class="btn btn-ghost" href="https://app.mydocfrance.com/app/?espace=medecin" data-cms="hero.4">Je suis médecin</a>
           </div>
-          <p class="hero-note"><span class="urgent">En cas d'urgence, appelez le <strong>15</strong> ou le <strong>112</strong>. MyDoc ne remplace pas les services d'urgence.</span></p>
+          <p class="hero-note"><span class="urgent" data-cms="hero.5">En cas d'urgence, appelez le <strong>15</strong> ou le <strong>112</strong>. MyDoc ne remplace pas les services d'urgence.</span></p>
         </div>
         <div class="phone" aria-hidden="true">
           <div class="screen">
@@ -58,27 +62,27 @@
 
 
     <!-- Chiffres clés -->
-    <section class="stats">
+    <section class="stats" data-cms-section="stats">
       <div class="wrap stats-grid">
-        <div class="stat"><strong data-count="133000" data-suffix=" +">133 000 +</strong><span>médecins référencés en France</span></div>
-        <div class="stat"><strong data-count="15">15</strong><span>spécialités pour vous orienter</span></div>
-        <div class="stat"><strong data-count="100" data-suffix=" %">100 %</strong><span>des données hébergées en France</span></div>
-        <div class="stat"><strong>24 h/24</strong><span>pour préparer votre consultation</span></div>
+        <div class="stat"><strong data-count="133000" data-suffix=" +" data-cms="stats.1">133 000 +</strong><span data-cms="stats.2">médecins référencés en France</span></div>
+        <div class="stat"><strong data-count="15" data-cms="stats.3">15</strong><span data-cms="stats.4">spécialités pour vous orienter</span></div>
+        <div class="stat"><strong data-count="100" data-suffix=" %" data-cms="stats.5">100 %</strong><span data-cms="stats.6">des données hébergées en France</span></div>
+        <div class="stat"><strong data-cms="stats.7">24 h/24</strong><span data-cms="stats.8">pour préparer votre consultation</span></div>
       </div>
     </section>
 
     <!-- Comment ça marche -->
-    <section class="section" id="comment">
+    <section class="section" id="comment" data-cms-section="comment">
       <div class="wrap">
         <div class="center">
-          <span class="eyebrow">Comment ça marche</span>
-          <h2>Trois étapes, un seul décideur : votre médecin</h2>
-          <p class="intro">L'assistant recueille les informations, l'IA propose des hypothèses au médecin, et c'est le médecin qui pose le diagnostic.</p>
+          <span class="eyebrow" data-cms="comment.1">Comment ça marche</span>
+          <h2 data-cms="comment.2">Trois étapes, un seul décideur : votre médecin</h2>
+          <p class="intro" data-cms="comment.3">L'assistant recueille les informations, l'IA propose des hypothèses au médecin, et c'est le médecin qui pose le diagnostic.</p>
         </div>
         <div class="grid grid-3 steps">
-          <div class="card step"><h3>Vous décrivez vos symptômes</h3><p class="muted">L'assistant vous interroge pas à pas : symptômes, durée, antécédents, traitements, allergies. Il repère les signes d'alerte et vous oriente vers le 15 si nécessaire.</p></div>
-          <div class="card step"><h3>Votre médecin reçoit un dossier clair</h3><p class="muted">Un compte-rendu structuré, avec des hypothèses diagnostiques par IA et des traitements vérifiés dans la base officielle des médicaments. Le médecin corrige, complète et décide.</p></div>
-          <div class="card step"><h3>Vous recevez sa réponse</h3><p class="muted">Conseils, ordonnance ou examens signés par le médecin, rendez-vous si besoin, et suivi dans le temps. Tout est rangé dans votre espace.</p></div>
+          <div class="card step"><h3 data-cms="comment.4">Vous décrivez vos symptômes</h3><p class="muted" data-cms="comment.5">L'assistant vous interroge pas à pas : symptômes, durée, antécédents, traitements, allergies. Il repère les signes d'alerte et vous oriente vers le 15 si nécessaire.</p></div>
+          <div class="card step"><h3 data-cms="comment.6">Votre médecin reçoit un dossier clair</h3><p class="muted" data-cms="comment.7">Un compte-rendu structuré, avec des hypothèses diagnostiques par IA et des traitements vérifiés dans la base officielle des médicaments. Le médecin corrige, complète et décide.</p></div>
+          <div class="card step"><h3 data-cms="comment.8">Vous recevez sa réponse</h3><p class="muted" data-cms="comment.9">Conseils, ordonnance ou examens signés par le médecin, rendez-vous si besoin, et suivi dans le temps. Tout est rangé dans votre espace.</p></div>
         </div>
       </div>
     </section>
@@ -87,22 +91,22 @@
     <section class="section alt" id="patients">
       <div class="wrap">
         <div class="grid grid-2">
-          <div class="audience patient">
-            <span class="eyebrow">Pour les patients</span>
-            <h2>Votre santé, plus simple</h2>
-            <ul>
+          <div class="audience patient" data-cms-section="patients">
+            <span class="eyebrow" data-cms="patients.1">Pour les patients</span>
+            <h2 data-cms="patients.2">Votre santé, plus simple</h2>
+            <ul data-cms="patients.3">
               <li>Décrivez vos symptômes à tout moment, depuis votre téléphone</li>
               <li>Recevez la réponse de votre médecin et vos ordonnances signées</li>
               <li>Prenez rendez-vous en quelques secondes</li>
               <li>Gardez analyses, ordonnances et photos dans un coffre-fort santé</li>
               <li>Vous choisissez ce que votre médecin peut voir</li>
             </ul>
-            <a class="btn btn-primary" href="https://app.mydocfrance.com/app/?espace=patient">Créer mon espace patient</a>
+            <a class="btn btn-primary" href="https://app.mydocfrance.com/app/?espace=patient" data-cms="patients.4">Créer mon espace patient</a>
           </div>
-          <div class="audience doctor" id="medecins">
-            <span class="eyebrow">Pour les médecins · MyDoc Pro</span>
-            <h2>Moins de temps à questionner, plus à soigner</h2>
-            <ul>
+          <div class="audience doctor" id="medecins" data-cms-section="medecins">
+            <span class="eyebrow" data-cms="medecins.1">Pour les médecins · MyDoc Pro</span>
+            <h2 data-cms="medecins.2">Moins de temps à questionner, plus à soigner</h2>
+            <ul data-cms="medecins.3">
               <li>Des patients qui arrivent avec une anamnèse complète et structurée</li>
               <li>Des hypothèses diagnostiques par IA, classées par probabilité, avec les arguments cliniques</li>
               <li>Des propositions de traitement vérifiées dans la base officielle des médicaments (ANSM)</li>
@@ -110,109 +114,121 @@
               <li>Agenda et prise de rendez-vous intégrés</li>
               <li>Documents partagés par le patient, au même endroit</li>
             </ul>
-            <a class="btn btn-primary" href="https://app.mydocfrance.com/app/?espace=medecin">Ouvrir MyDoc Pro</a>
+            <a class="btn btn-primary" href="https://app.mydocfrance.com/app/?espace=medecin" data-cms="medecins.4">Ouvrir MyDoc Pro</a>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Sécurité -->
-    <section class="section dark" id="securite">
+    <section class="section dark" id="securite" data-cms-section="securite">
       <div class="wrap">
-        <span class="eyebrow">Confiance et sécurité</span>
-        <h2>Des données de santé traitées avec sérieux</h2>
-        <p class="intro">Nous construisons MyDoc dans le respect du RGPD et des règles propres aux données de santé.</p>
+        <span class="eyebrow" data-cms="securite.1">Confiance et sécurité</span>
+        <h2 data-cms="securite.2">Des données de santé traitées avec sérieux</h2>
+        <p class="intro" data-cms="securite.3">Nous construisons MyDoc dans le respect du RGPD et des règles propres aux données de santé.</p>
         <div class="grid grid-4">
-          <div class="card"><div class="icon teal">📍</div><h3>Hébergé en France</h3><p class="muted">Données stockées à Paris, chiffrées pendant leur transfert et sur les serveurs.</p></div>
-          <div class="card"><div class="icon teal">🔒</div><h3>Accès contrôlé</h3><p class="muted">Seul votre médecin accède à votre dossier. Vous décidez des documents partagés.</p></div>
-          <div class="card"><div class="icon teal">✍️</div><h3>Ordonnances signées</h3><p class="muted">Le médecin confirme chaque ordonnance avec un code reçu par SMS.</p></div>
-          <div class="card"><div class="icon teal">🚫</div><h3>Aucune revente</h3><p class="muted">Vos données ne sont ni vendues ni utilisées à des fins publicitaires.</p></div>
+          <div class="card"><div class="icon teal" data-cms="securite.4">📍</div><h3 data-cms="securite.5">Hébergé en France</h3><p class="muted" data-cms="securite.6">Données stockées à Paris, chiffrées pendant leur transfert et sur les serveurs.</p></div>
+          <div class="card"><div class="icon teal" data-cms="securite.7">🔒</div><h3 data-cms="securite.8">Accès contrôlé</h3><p class="muted" data-cms="securite.9">Seul votre médecin accède à votre dossier. Vous décidez des documents partagés.</p></div>
+          <div class="card"><div class="icon teal" data-cms="securite.10">✍️</div><h3 data-cms="securite.11">Ordonnances signées</h3><p class="muted" data-cms="securite.12">Le médecin confirme chaque ordonnance avec un code reçu par SMS.</p></div>
+          <div class="card"><div class="icon teal" data-cms="securite.13">🚫</div><h3 data-cms="securite.14">Aucune revente</h3><p class="muted" data-cms="securite.15">Vos données ne sont ni vendues ni utilisées à des fins publicitaires.</p></div>
         </div>
       </div>
     </section>
 
     <!-- Entreprises -->
-    <section class="section" id="entreprises">
+    <section class="section" id="entreprises" data-cms-section="entreprises">
       <div class="wrap">
-        <span class="eyebrow">Entreprises et partenaires</span>
-        <h2>MyDoc pour les organisations de santé</h2>
-        <p class="intro">Nous travaillons avec les acteurs qui veulent offrir un meilleur accès aux soins à leurs adhérents, salariés ou patients.</p>
+        <span class="eyebrow" data-cms="entreprises.1">Entreprises et partenaires</span>
+        <h2 data-cms="entreprises.2">MyDoc pour les organisations de santé</h2>
+        <p class="intro" data-cms="entreprises.3">Nous travaillons avec les acteurs qui veulent offrir un meilleur accès aux soins à leurs adhérents, salariés ou patients.</p>
         <div class="grid grid-4">
-          <div class="card"><div class="icon">🛡️</div><h3>Mutuelles et assurances</h3><p class="muted">Un service d'orientation et de suivi médical pour vos adhérents, sans renoncer au médecin traitant.</p></div>
-          <div class="card"><div class="icon">🏥</div><h3>Centres et maisons de santé</h3><p class="muted">Des consultations mieux préparées pour absorber plus de demandes avec la même équipe.</p></div>
-          <div class="card"><div class="icon">📞</div><h3>Téléconsultation</h3><p class="muted">Une anamnèse structurée avant chaque échange pour gagner du temps médical.</p></div>
-          <div class="card"><div class="icon">🏢</div><h3>Employeurs</h3><p class="muted">Un accès simple au suivi médical pour vos équipes, en complément de la médecine du travail.</p></div>
+          <div class="card"><div class="icon" data-cms="entreprises.4">🛡️</div><h3 data-cms="entreprises.5">Mutuelles et assurances</h3><p class="muted" data-cms="entreprises.6">Un service d'orientation et de suivi médical pour vos adhérents, sans renoncer au médecin traitant.</p></div>
+          <div class="card"><div class="icon" data-cms="entreprises.7">🏥</div><h3 data-cms="entreprises.8">Centres et maisons de santé</h3><p class="muted" data-cms="entreprises.9">Des consultations mieux préparées pour absorber plus de demandes avec la même équipe.</p></div>
+          <div class="card"><div class="icon" data-cms="entreprises.10">📞</div><h3 data-cms="entreprises.11">Téléconsultation</h3><p class="muted" data-cms="entreprises.12">Une anamnèse structurée avant chaque échange pour gagner du temps médical.</p></div>
+          <div class="card"><div class="icon" data-cms="entreprises.13">🏢</div><h3 data-cms="entreprises.14">Employeurs</h3><p class="muted" data-cms="entreprises.15">Un accès simple au suivi médical pour vos équipes, en complément de la médecine du travail.</p></div>
         </div>
-        <p style="margin-top:28px"><a class="btn btn-outline" href="mailto:contact@mydocfrance.com?subject=Partenariat%20MyDoc">Parlons de votre projet</a></p>
+        <p style="margin-top:28px"><a class="btn btn-outline" href="mailto:contact@mydocfrance.com?subject=Partenariat%20MyDoc" data-cms="entreprises.16">Parlons de votre projet</a></p>
       </div>
     </section>
 
     <!-- Télécharger -->
-    <section class="section alt" id="telecharger">
+    <section class="section alt" id="telecharger" data-cms-section="telecharger">
       <div class="wrap">
-        <span class="eyebrow">Application</span>
-        <h2>MyDoc sur tous vos écrans</h2>
-        <p class="intro">Un seul compte, sur téléphone ou ordinateur.</p>
+        <span class="eyebrow" data-cms="telecharger.1">Application</span>
+        <h2 data-cms="telecharger.2">MyDoc sur tous vos écrans</h2>
+        <p class="intro" data-cms="telecharger.3">Un seul compte, sur téléphone ou ordinateur.</p>
         <div class="grid grid-3">
           <a class="card download" href="https://app.mydocfrance.com/downloads/mydoc-france.apk">
-            <div class="icon">🤖</div>
-            <div><strong>Android</strong><span>Télécharger l'application</span></div>
+            <div class="icon" data-cms="telecharger.4">🤖</div>
+            <div><strong data-cms="telecharger.5">Android</strong><span data-cms="telecharger.6">Télécharger l'application</span></div>
           </a>
           <div class="card download">
-            <div class="icon">🍎</div>
-            <div><strong>iPhone</strong><span>Bientôt sur l'App Store. En attendant, la version web fonctionne sur Safari.</span></div>
+            <div class="icon" data-cms="telecharger.7">🍎</div>
+            <div><strong data-cms="telecharger.8">iPhone</strong><span data-cms="telecharger.9">Bientôt sur l'App Store. En attendant, la version web fonctionne sur Safari.</span></div>
           </div>
           <a class="card download" href="https://app.mydocfrance.com/app/">
-            <div class="icon">💻</div>
-            <div><strong>Ordinateur</strong><span>Utiliser MyDoc dans le navigateur</span></div>
+            <div class="icon" data-cms="telecharger.10">💻</div>
+            <div><strong data-cms="telecharger.11">Ordinateur</strong><span data-cms="telecharger.12">Utiliser MyDoc dans le navigateur</span></div>
           </a>
         </div>
-        <p class="muted" style="margin-top:16px">Sur Android, autorisez l'installation depuis votre navigateur si votre téléphone le demande. L'application arrivera prochainement sur Google Play.</p>
+        <p class="muted" style="margin-top:16px" data-cms="telecharger.13">Sur Android, autorisez l'installation depuis votre navigateur si votre téléphone le demande. L'application arrivera prochainement sur Google Play.</p>
+      </div>
+    </section>
+
+    <!-- Actualités (gérées depuis l'administration) -->
+    <section class="section alt" id="actualites" data-cms-news hidden>
+      <div class="wrap">
+        <span class="eyebrow">Actualités</span>
+        <h2 class="news-title">Les nouvelles de MyDoc</h2>
+        <div class="grid grid-3 news"></div>
       </div>
     </section>
 
     <!-- Équipe -->
-    <section class="section" id="equipe">
+    <section class="section" id="equipe" data-cms-section="equipe">
       <div class="wrap">
         <div class="center">
-          <span class="eyebrow">Équipe</span>
-          <h2>Les fondateurs</h2>
-          <p class="intro">Une équipe qui réunit développement commercial, technologie et finance.</p>
+          <span class="eyebrow" data-cms="equipe.1">Équipe</span>
+          <h2 data-cms="equipe.2">Les fondateurs</h2>
+          <p class="intro" data-cms="equipe.3">Une équipe qui réunit développement commercial, technologie et finance.</p>
         </div>
         <div class="grid grid-3">
           <div class="card person">
             <img src="images/victor_veduta.jpg" alt="Victor Veduta" loading="lazy">
-            <h3>Victor Veduta</h3>
-            <div class="role">CEO &amp; co-fondateur</div>
-            <p class="muted">Plus de 10 ans d'expérience en développement commercial, stratégie et création de réseaux, dans la mobilité, la tech et les modèles innovants.</p>
-            <a href="https://www.linkedin.com/in/victor-veduta-a29597180/" target="_blank" rel="noopener">LinkedIn</a>
+            <h3 data-cms="equipe.4">Victor Veduta</h3>
+            <div class="role" data-cms="equipe.5">CEO &amp; co-fondateur</div>
+            <p class="muted" data-cms="equipe.6">Plus de 10 ans d'expérience en développement commercial, stratégie et création de réseaux, dans la mobilité, la tech et les modèles innovants.</p>
+            <a href="https://www.linkedin.com/in/victor-veduta-a29597180/" target="_blank" rel="noopener" data-cms="equipe.7">LinkedIn</a>
           </div>
           <div class="card person">
             <img src="images/sebastien_rastegar.jpg" alt="Sébastien Rastegar" loading="lazy">
-            <h3>Sébastien Rastegar</h3>
-            <div class="role">CTO &amp; co-fondateur</div>
-            <p class="muted">15 ans d'expérience en systèmes distribués, cloud et algorithmique, dont plus de 5 ans sur des projets d'IA et de data science. Ancien de BNP Paribas, Alstom et Bouygues Telecom.</p>
+            <h3 data-cms="equipe.8">Sébastien Rastegar</h3>
+            <div class="role" data-cms="equipe.9">CTO &amp; co-fondateur</div>
+            <p class="muted" data-cms="equipe.10">15 ans d'expérience en systèmes distribués, cloud et algorithmique, dont plus de 5 ans sur des projets d'IA et de data science. Ancien de BNP Paribas, Alstom et Bouygues Telecom.</p>
           </div>
           <div class="card person">
             <img src="images/ludovic_rocher.jpg" alt="Ludovic Rocher" loading="lazy">
-            <h3>Ludovic Rocher</h3>
-            <div class="role">CFO &amp; co-fondateur</div>
-            <p class="muted">Ingénierie informatique et finance : gestion de projet, modélisation économique et stratégie de croissance.</p>
-            <a href="https://www.linkedin.com/in/ludovic-rocher-33a562248/" target="_blank" rel="noopener">LinkedIn</a>
+            <h3 data-cms="equipe.11">Ludovic Rocher</h3>
+            <div class="role" data-cms="equipe.12">CFO &amp; co-fondateur</div>
+            <p class="muted" data-cms="equipe.13">Ingénierie informatique et finance : gestion de projet, modélisation économique et stratégie de croissance.</p>
+            <a href="https://www.linkedin.com/in/ludovic-rocher-33a562248/" target="_blank" rel="noopener" data-cms="equipe.14">LinkedIn</a>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- Sections ajoutées depuis l'administration -->
+    <div data-cms-custom></div>
+
     <!-- Appel final -->
-    <section class="section" style="padding-top:0">
+    <section class="section" style="padding-top:0" data-cms-section="cta">
       <div class="wrap">
         <div class="cta">
-          <h2>Prêt à essayer MyDoc ?</h2>
-          <p>Créez votre espace en deux minutes, avec votre adresse e-mail ou votre compte Google.</p>
+          <h2 data-cms="cta.1">Prêt à essayer MyDoc ?</h2>
+          <p data-cms="cta.2">Créez votre espace en deux minutes, avec votre adresse e-mail ou votre compte Google.</p>
           <div class="hero-actions">
-            <a class="btn btn-light" href="https://app.mydocfrance.com/app/?espace=patient">Je suis patient</a>
-            <a class="btn btn-ghost" href="https://app.mydocfrance.com/app/?espace=medecin">Je suis médecin</a>
+            <a class="btn btn-light" href="https://app.mydocfrance.com/app/?espace=patient" data-cms="cta.3">Je suis patient</a>
+            <a class="btn btn-ghost" href="https://app.mydocfrance.com/app/?espace=medecin" data-cms="cta.4">Je suis médecin</a>
           </div>
         </div>
       </div>

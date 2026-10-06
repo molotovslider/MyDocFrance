@@ -223,3 +223,14 @@ footer .brand { color: #fff; margin-bottom: 14px; }
 
 /* Hauteur fixe de la conversation de démo : pas de saut de mise en page pendant l animation. */
 .js #demo-chat { min-height: 318px; align-content: start; }
+
+/* Contenus gérés depuis l'administration */
+[hidden] { display: none !important; }
+.site-announce { background: linear-gradient(90deg, var(--blue-dark), var(--teal)); color: #fff; font-weight: 600; font-size: .95rem; }
+.site-announce .wrap { padding-top: 10px; padding-bottom: 10px; text-align: center; }
+.site-announce a { color: #fff; text-decoration: underline; margin-left: 6px; }
+.news-item { display: flex; flex-direction: column; gap: 6px; }
+.news-date { font-size: .8rem; font-weight: 700; color: var(--teal); text-transform: uppercase; letter-spacing: .06em; }
+.news-link { font-weight: 650; margin-top: auto; }
+.custom-section .intro { max-width: 760px; }
+.legal-version { margin-top: 3em; font-size: .9rem; }
