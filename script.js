@@ -15,6 +15,11 @@ document.querySelectorAll('[data-year]').forEach((el) => {
   el.textContent = new Date().getFullYear();
 });
 
+// En-tête flottant : plus opaque une fois le haut de page dépassé.
+const onScroll = () => document.documentElement.classList.toggle('scrolled', window.scrollY > 40);
+window.addEventListener('scroll', onScroll, { passive: true });
+onScroll();
+
 // ---------- Animations ----------
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 document.documentElement.classList.add('js');
@@ -22,7 +27,7 @@ document.documentElement.classList.add('js');
 // Apparition des blocs au défilement, en cascade dans chaque groupe.
 if (!reduceMotion && 'IntersectionObserver' in window) {
   const targets = document.querySelectorAll(
-    '.section h2, .section .intro, .card, .audience, .cta, .stat, .legal > *');
+    '.section h2, .section .intro, .card:not(.step), .audience, .cta, .stat, .legal > *');
   const groups = new Map();
   targets.forEach((el) => {
     el.classList.add('reveal');
@@ -42,22 +47,191 @@ if (!reduceMotion && 'IntersectionObserver' in window) {
   targets.forEach((el) => io.observe(el));
 }
 
-// Conversation de démonstration : les messages s'affichent un par un, en boucle.
+// Haut de page : un tracé de pouls balaie l'écran ; à chaque battement, des points lumineux
+// s'en détachent et rejoignent le dossier (l'IA qui écoute et structure). Toile locale, aucun script tiers.
+(() => {
+  const canvas = document.querySelector('.hero-canvas');
+  if (!canvas || !canvas.getContext) return;
+  const hero = canvas.parentElement;
+  const ctx = canvas.getContext('2d');
+  let w = 0, h = 0, nodes = [], particles = [], running = true, last = performance.now(), head = 0, lastBeat = -1;
+  const PERIOD = 360; // largeur d'un battement, en pixels
+  const SPEED = 230; // vitesse du balayage, en pixels par seconde
+
+  // Forme d'un battement (ondes P, QRS, T) ; valeur négative = vers le haut.
+  const beat = (p) => {
+    if (p < 0.10) return 0;
+    if (p < 0.16) return -Math.sin(((p - 0.10) / 0.06) * Math.PI) * 0.10;
+    if (p < 0.22) return 0;
+    if (p < 0.24) return ((p - 0.22) / 0.02) * 0.15;
+    if (p < 0.27) return 0.15 - ((p - 0.24) / 0.03) * 1.15;
+    if (p < 0.30) return -1.0 + ((p - 0.27) / 0.03) * 1.35;
+    if (p < 0.32) return 0.35 - ((p - 0.30) / 0.02) * 0.35;
+    if (p < 0.44) return 0;
+    if (p < 0.56) return -Math.sin(((p - 0.44) / 0.12) * Math.PI) * 0.22;
+    return 0;
+  };
+  const base = () => h * (w < 1020 ? 0.9 : 0.8);
+  const amp = () => Math.min(90, h * 0.1);
+  const yAt = (x) => base() + beat(((x % PERIOD) + PERIOD) % PERIOD / PERIOD) * amp();
+  const target = () => (w < 1020 ? { x: w * 0.5, y: h * 0.62 } : { x: w * 0.74, y: h * 0.5 });
+
+  const resize = () => {
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    w = canvas.clientWidth;
+    h = canvas.clientHeight;
+    canvas.width = Math.round(w * dpr);
+    canvas.height = Math.round(h * dpr);
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    const count = Math.min(60, Math.round((w * h) / 26000));
+    nodes = Array.from({ length: count }, () => ({
+      x: Math.random() * w, y: Math.random() * h * 0.85,
+      vx: (Math.random() - 0.5) * 0.15, vy: (Math.random() - 0.5) * 0.15,
+    }));
+  };
+
+  const drawNetwork = () => {
+    for (const n of nodes) {
+      n.x += n.vx; n.y += n.vy;
+      if (n.x < 0 || n.x > w) n.vx *= -1;
+      if (n.y < 0 || n.y > h * 0.85) n.vy *= -1;
+    }
+    for (let i = 0; i < nodes.length; i++) {
+      for (let j = i + 1; j < nodes.length; j++) {
+        const a = nodes[i], b = nodes[j];
+        const d = Math.hypot(a.x - b.x, a.y - b.y);
+        if (d < 140) {
+          ctx.strokeStyle = `rgba(103, 232, 249, ${(1 - d / 140) * 0.09})`;
+          ctx.lineWidth = 1;
+          ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke();
+        }
+      }
+      ctx.fillStyle = 'rgba(148, 197, 255, .35)';
+      ctx.beginPath(); ctx.arc(nodes[i].x, nodes[i].y, 1.4, 0, Math.PI * 2); ctx.fill();
+    }
+  };
+
+  const drawPulse = (full) => {
+    ctx.save();
+    ctx.lineWidth = 2;
+    ctx.lineJoin = 'round';
+    ctx.shadowColor = 'rgba(45, 212, 191, .9)';
+    const step = 4;
+    for (let x = 0; x < w; x += step) {
+      const age = full ? w * 0.3 : (((head - x) % w) + w) % w; // distance derrière la tête de lecture
+      const alpha = full ? 0.55 : Math.max(0, 1 - age / (w * 0.85));
+      if (alpha <= 0.01) continue;
+      ctx.strokeStyle = `rgba(45, 212, 191, ${alpha})`;
+      ctx.shadowBlur = 14 * alpha;
+      ctx.beginPath(); ctx.moveTo(x, yAt(x)); ctx.lineTo(x + step, yAt(x + step)); ctx.stroke();
+    }
+    if (!full && Number.isFinite(head)) {
+      const y = yAt(head);
+      const g = ctx.createRadialGradient(head, y, 0, head, y, 26);
+      g.addColorStop(0, 'rgba(204, 251, 241, 1)');
+      g.addColorStop(1, 'rgba(45, 212, 191, 0)');
+      ctx.fillStyle = g;
+      ctx.beginPath(); ctx.arc(head, y, 26, 0, Math.PI * 2); ctx.fill();
+    }
+    ctx.restore();
+  };
+
+  const emit = (x) => {
+    const y = yAt(x) - amp() * 0.6;
+    for (let i = 0; i < 16; i++) {
+      particles.push({
+        x, y, vx: (Math.random() - 0.3) * 1.2, vy: -1 - Math.random() * 1.6,
+        life: 0, max: 150 + Math.random() * 120, r: 1 + Math.random() * 1.8,
+      });
+    }
+  };
+
+  const drawParticles = () => {
+    const t = target();
+    particles = particles.filter((p) => p.life < p.max);
+    for (const p of particles) {
+      p.life++;
+      // attirées doucement vers le dossier
+      p.vx += (t.x - p.x) * 0.00045;
+      p.vy += (t.y - p.y) * 0.00045;
+      p.vx *= 0.985; p.vy *= 0.985;
+      p.x += p.vx; p.y += p.vy;
+      const a = Math.sin((p.life / p.max) * Math.PI) * 0.9;
+      ctx.fillStyle = `rgba(165, 243, 252, ${a})`;
+      ctx.shadowColor = 'rgba(103, 232, 249, .9)';
+      ctx.shadowBlur = 8;
+      ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2); ctx.fill();
+    }
+    ctx.shadowBlur = 0;
+  };
+
+  const frame = (now) => {
+    if (!running) return;
+    if (!w || !h) resize();
+    if (!w || !h) { requestAnimationFrame(frame); return; } // toile pas encore dimensionnée
+    if (!Number.isFinite(head)) head = 0;
+    const dt = Math.min(0.05, (now - last) / 1000);
+    last = now;
+    head = (head + SPEED * dt) % w;
+    // un battement franchi par la tête de lecture : émission de points
+    const beatIndex = Math.floor((head - PERIOD * 0.27) / PERIOD);
+    if (beatIndex !== lastBeat) {
+      lastBeat = beatIndex;
+      if (head > PERIOD * 0.27) emit(beatIndex * PERIOD + PERIOD * 0.27);
+    }
+    ctx.clearRect(0, 0, w, h);
+    drawNetwork();
+    drawPulse(false);
+    drawParticles();
+    requestAnimationFrame(frame);
+  };
+
+  resize();
+  window.addEventListener('resize', resize);
+  if (reduceMotion) {
+    drawNetwork();
+    drawPulse(true);
+    return;
+  }
+  const start = () => { if (!running) { running = true; last = performance.now(); requestAnimationFrame(frame); } };
+  const stop = () => { running = false; };
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(([e]) => (e.isIntersecting && !document.hidden ? start() : stop())).observe(hero);
+  }
+  document.addEventListener('visibilitychange', () => (document.hidden ? stop() : start()));
+  requestAnimationFrame(frame);
+
+  // Léger effet de profondeur : le texte s'éloigne quand on descend.
+  const copy = hero.querySelector('.hero-copy');
+  if (copy) {
+    window.addEventListener('scroll', () => {
+      const y = Math.min(window.scrollY, h);
+      copy.style.transform = `translateY(${y * 0.18}px)`;
+      copy.style.opacity = String(Math.max(0, 1 - y / (h * 0.8)));
+    }, { passive: true });
+  }
+})();
+
+// Démonstration : la conversation s'affiche message par message et le compte-rendu se remplit.
 const chat = document.getElementById('demo-chat');
 if (chat) {
   const bubbles = [...chat.querySelectorAll('.bubble')];
   const typing = chat.querySelector('.typing');
   const foot = document.getElementById('demo-foot');
+  const lines = [...document.querySelectorAll('#demo-dossier .dossier-line')];
+  const showLine = (n) => lines.forEach((l) => { if (l.dataset.line === String(n)) l.classList.add('show'); });
   if (reduceMotion) {
     bubbles.forEach((b) => b.classList.add('show'));
+    lines.forEach((l) => l.classList.add('show'));
     foot.classList.add('show');
   } else {
     const wait = (ms) => new Promise((r) => setTimeout(r, ms));
     const play = async () => {
       for (;;) {
         bubbles.forEach((b) => { b.classList.remove('show'); b.style.display = 'none'; });
+        lines.forEach((l) => l.classList.remove('show'));
         foot.classList.remove('show');
-        await wait(600);
+        await wait(700);
         for (const b of bubbles) {
           if (b.classList.contains('ai')) {
             typing.classList.add('show');
@@ -69,15 +243,38 @@ if (chat) {
           chat.insertBefore(b, typing);
           await wait(30);
           b.classList.add('show');
+          if (b.dataset.line) {
+            await wait(450);
+            showLine(b.dataset.line);
+          }
           await wait(b.classList.contains('me') ? 900 : 700);
         }
+        showLine(4);
+        await wait(600);
         foot.classList.add('show');
-        await wait(4500);
+        await wait(5000);
       }
     };
     play();
   }
 }
+
+// Comment ça marche : la scène suit l'étape lue au centre de l'écran.
+(() => {
+  const steps = [...document.querySelectorAll('.step[data-step]')];
+  const scenes = [...document.querySelectorAll('.scene[data-scene]')];
+  if (!steps.length || !scenes.length) return;
+  const activate = (n) => {
+    steps.forEach((s) => s.classList.toggle('is-active', s.dataset.step === n));
+    scenes.forEach((s) => s.classList.toggle('is-active', s.dataset.scene === n));
+  };
+  activate('1');
+  if (!('IntersectionObserver' in window)) return;
+  const so = new IntersectionObserver((entries) => {
+    entries.forEach((e) => { if (e.isIntersecting) activate(e.target.dataset.step); });
+  }, { rootMargin: '-45% 0px -45% 0px' });
+  steps.forEach((s) => so.observe(s));
+})();
 
 // Chiffres clés : comptage animé à l'apparition.
 const counters = document.querySelectorAll('[data-count]');
