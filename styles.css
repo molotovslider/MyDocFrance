@@ -215,6 +215,23 @@ p { margin: 0 0 1em; }
 .downloads a { color: #cbd5e1; }
 .downloads a:hover { color: #fff; }
 
+/* Pages dédiées (patients, médecins, partenaires) */
+.hero.hero-sub { min-height: auto; padding: 160px 0 110px; }
+.hero-sub .hero-grid { grid-template-columns: 1fr; max-width: 860px; }
+.hero-sub h1 { font-size: clamp(2.3rem, 5vw, 4rem); }
+.steps4 { margin-top: 36px; }
+.num-card .step-num { display: block; font-size: 2.4rem; margin-bottom: 10px; }
+.num-card h3 { font-size: 1.15rem; }
+.why { margin-top: 36px; }
+.faq { max-width: 860px; }
+.faq h2 { margin-bottom: 28px; }
+.faq details { border-bottom: 1px solid var(--border); padding: 4px 0; }
+.faq summary { cursor: pointer; list-style: none; position: relative; padding: 18px 40px 18px 0; font-family: var(--display); font-weight: 700; font-size: 1.08rem; color: var(--ink); }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: "+"; position: absolute; right: 6px; top: 50%; transform: translateY(-50%); font-size: 1.5rem; font-weight: 400; color: var(--teal); transition: transform .2s; }
+.faq details[open] summary::after { transform: translateY(-50%) rotate(45deg); }
+.faq details p { margin: 0 0 18px; color: var(--muted); max-width: 760px; }
+
 /* Bandeau sombre */
 .dark { background: radial-gradient(800px 400px at 85% 0%, rgba(45,212,191,.12), transparent 60%), var(--night); color: #cbd5e1; }
 .dark h2, .dark h3 { color: #fff; }
@@ -315,6 +332,10 @@ footer .brand { margin-bottom: 14px; }
   .stats-grid { grid-template-columns: 1fr; gap: 10px; }
   .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
   .compact .grid-4 { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .steps4, .compact .why { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .num-card { padding: 18px; }
+  .num-card .step-num { font-size: 1.9rem; }
+  .hero.hero-sub { padding: 120px 0 80px; }
   .compact .card { padding: 18px; }
   .burger { display: block; }
   .top { top: 10px; padding: 0 10px; }

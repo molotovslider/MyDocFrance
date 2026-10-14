@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://mydocfrance.com/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://mydocfrance.com/medecins.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mydocfrance.com/patients.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mydocfrance.com/assistant-consultation.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mydocfrance.com/centres-de-sante.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mydocfrance.com/mutuelles.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://mydocfrance.com/investissement.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://mydocfrance.com/legal/mentions.html</loc><changefreq>yearly</changefreq><priority>0.2</priority></url>
   <url><loc>https://mydocfrance.com/legal/politique.html</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
